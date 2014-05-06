@@ -1,0 +1,47 @@
+/* wep wordpress plugin div css markup */
+
+.webemailprotector_admin_wrap {background:white;margin:0;padding:0;border:0;}
+
+.webemailprotector_admin_wrap red {color:red;}
+
+.webemailprotector_admin_wrap blue {color:blue;}
+
+.webemailprotector_admin_wrap green {color:green;}
+
+.webemailprotector_admin_wrap a {background:green;border-radius:5px;padding:4px;color:white;text-decoration:none;}
+
+.webemailprotector_admin_wrap p {margin-left:30px;font-size:14px;}
+
+.webemailprotector_admin_wrap h1 {margin-left:100px;margin-top:30px;font-size:18px;color:black;background:white;padding:10px;}
+
+.webemailprotector_admin_wrap h1 red , .webemailprotector_admin_wrap h1 blue , .webemailprotector_admin_wrap h1 green {font-size:24px;}
+
+/*.webemailprotector_admin_wrap input[type="button"] , .webemailprotector_admin_wrap table input[type="button"] {color:black;background:#1G8EC2;display:inline-block;text-decoration:none;font-size:13px;line-height:26px;height:28px;margin:0;padding:0 10px 1px;cursor:pointer;border-width:1px;border-style:solid;-webkit-border-radius:3px;-webkit-appearance:none;border-radius:3px;white-space:nowrap;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;border-radius:3px;}
+
+.webemailprotector_admin_wrap input[type="button"]:hover , .webemailprotector_admin_wrap table input[type="button"]:hover {background: #1E8CC4;}
+*/
+.webemailprotector_admin_wrap table {background:silver;border:3px solid blue; border-radius:15px;margin-top:30px;margin-left:50px;padding:20px;}
+
+.webemailprotector_admin_wrap tr {}
+
+.webemailprotector_admin_wrap th {font-size:14px;}
+
+.webemailprotector_admin_wrap td {}
+
+.webemailprotector_admin_wrap table p {}
+
+.webemailprotector_admin_wrap table input[type="text"] {text-align:center;padding:5px;margin:0;width:300px;border:1px solid black;border-radius:5px;}
+
+.webemailprotector_admin_wrap table input[type="text"]:focus {color:red;}
+
+.webemailprotector_admin_wrap table input[type="button"] {}
+
+.webemailprotector_admin_wrap #wep_spinner {position:fixed;text-align:centre;width:200px;top:30%;left:40%;margin-left:auto;margin-right:auto;display:none;padding:45px;z-index:1001;background:white;border-radius:15px;border:3px solid blue;}
+
+.webemailprotector_admin_wrap #wep_spinner img {display:block;margin-left:auto;margin-right:auto;}
+
+.webemailprotector_admin_wrap #wep_spinner p {display:block;margin-left:auto;margin-right:auto;text-align:center;}
+
+.webemailprotector_admin_wrap #wep_dullout {display:none;z-index:1000;position:fixed;top:0;left:0;width:100%;height:100%;background:gray;opacity:0.6;filter:alpha(opacity=60);}
+
+.webemailprotector_admin_wrap #wep_dullout p {display:block;}
