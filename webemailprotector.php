@@ -2,8 +2,8 @@
 /**
  * Plugin Name: WebEmailProtector
  * Plugin URI: http://www.webemailprotector.com
- * Description: ** Brand new to WordPress ** Secure your website email addresses. WebEmailProtector is the most secure Email Obfuscator available for websites. Email harvesting is a major problem for sites, as often this leads to unwanted spam, viruses and ID theft. But using this plugin your address is no longer openly listed. It's not just a simple encoder, but a secure authentication lookup with deep qualification. Thus it completely prevents spambots and other harvesters, machine or human, and stops email misuse at source. Easy to use and easy to set up, much less cumbersome and much more effective than a contact form or captcha.
- * Version: 1.0
+ * Description: ** Brand New to WordPress ** Secure your website email addresses from being scraped and harvested with the strongest email obfuscator available.
+ * Version: 1.0.1
  * Author: David Srodzinski
  * Author URI: http://www.webemailprotector.com/about.html
  * License: GPL2
