@@ -1,9 +1,9 @@
 <?php
-/**
+/*
  * Plugin Name: WebEmailProtector
  * Plugin URI: http://www.webemailprotector.com
  * Description: ** Brand New to WordPress ** Secure your website email addresses from being scraped and harvested with the strongest email obfuscator available.
- * Version: 1.0.1
+ * Version: 1.1.0
  * Author: David Srodzinski
  * Author URI: http://www.webemailprotector.com/about.html
  * License: GPL2
@@ -31,6 +31,7 @@
 require_once(plugin_dir_path(__FILE__).'admin/webemailprotector_emo_new.php'); //adds new entry
 require_once(plugin_dir_path(__FILE__).'admin/webemailprotector_emo_delete.php'); //deleted entry
 require_once(plugin_dir_path(__FILE__).'admin/webemailprotector_emo_validate.php'); //validates entry
+require_once(plugin_dir_path(__FILE__).'admin/webemailprotector_emo_unvalidate.php'); //validates entry
 require_once(plugin_dir_path(__FILE__).'admin/webemailprotector_email_change.php'); //updates email in db
 require_once(plugin_dir_path(__FILE__).'admin/webemailprotector_displayname_change.php'); //updates display text in db
 require_once(plugin_dir_path(__FILE__).'admin/webemailprotector_email_get.php'); //retrieves email address from db
@@ -89,6 +90,12 @@ function webemailprotector_plugin_options() {
   // reset database during dev only (can remove later) or on first instantiation create 5 blanks
   $wep_reset_db = false;
   if (( $wep_reset_db == true ) or ( get_option('wepdb_nuemails') == false )){
+   //log the fact that has been initialised
+   $current_user = wp_get_current_user();
+   $current_user_email = $current_user->user_email;
+   echo '<script type="text/javascript">',
+   'webemailprotector_emo_init(\'',$current_user_email,'\');',
+   '</script>';
    if ( get_option('wepdb_nuemails') == true) {delete_option('wepdb_nuemails');}
    add_option('wepdb_nuemails','5'); //this holds the number stored in the dB
    if ( get_option('wepdb_nextemail') == true) {delete_option('wepdb_nextemail');}
@@ -148,9 +155,9 @@ function webemailprotector_plugin_options() {
   echo '<h1><blue>Web</blue><green>Email</green><red>Protector</red> &nbsp;&nbsp;&nbsp;&nbsp;WordPress Plugin Settings Menu<br>';
   echo '<p style="font-size:12px;margin-top:0;margin-left:0;"><i>&nbsp;&nbsp;securing your web-site email addresses</i></p>';
   echo '</h1>';
-  echo '<p>Using the form below, please enter each email address that you wish to use into the <b>secured email address</b> column.</p>';
-  echo '<p>Next enter the associated text to display into the <b>displayed text</b> column (this is the link text that will appear on your pages</p>';
-  echo '<p>in place of the email address when published). Then follow the further instructions to register, validate and use each email.</p>';
+  echo '<p>Using the form below, enter the email addresses that you wish to secure into the <b>secured email address</b> column.</p>';
+  echo '<p>Next enter the associated display text into the <b>displayed text</b> column (this is the link text that will appear in place of the</p>';
+  echo '<p>email address when your pages are published). Then follow the further instructions to register, validate and use each email.</p>';
   echo '<form action="" name="wep_settings" method="POST">';
   echo '<table id="wep_table"><tbody>';
   echo '<tr>';
@@ -215,22 +222,48 @@ function webemailprotector_plugin_options() {
 // do the filter on any displayed page
 function webemailprotector_filter($content) {
 //do it on the page (rather than a blog?) and not on the admin pages themselves
+$newcontent=$content; //copy the page
 if (is_page() and !is_admin()) {
  // populate dataset
- //$newcontent = str_replace('@webemailprotector.com','@balls.com',$content);
- $newcontent=$content; //copy the page
- $wep_nuemails = get_option('wepdb_nuemails');
- for ($i = 1;$i <= $wep_nuemails; $i++) {
+ if ( get_option('wepdb_nuemails') == true){
+  $wep_nuemails = get_option('wepdb_nuemails');
+  for ($i = 1;$i <= $wep_nuemails; $i++) {
     $wep_email = get_option('wepdb_wep_email_'.$i);
     $wep_emo = get_option('wepdb_wep_emo_'.$i);
     $wep_display_name = get_option('wepdb_wep_display_name_'.$i);
-    $newtext='<a class="wep_email" href="JavaScript:emo(\''.$wep_emo.'\')" title="'.$wep_display_name.'">'.$wep_display_name.'</a>';
-    //of form [email]
-	$newcontent = str_replace('['.$wep_email.']',$newtext,$newcontent); //email in brackets[]
+	$wep_validated = get_option('wepdb_wep_validated_'.$i);
+	if ($wep_validated == 'true'){
+     $newtext='<a class="wep_email" href="JavaScript:emo(\''.$wep_emo.'\')" title="'.$wep_display_name.'">'.$wep_display_name.'</a>';
+     //of form [email]
+	 $newcontent = str_replace('['.$wep_email.']',$newtext,$newcontent); //email in brackets[]
+	}
+   }
   }
- return  $newcontent;
  }
+return  $newcontent;
 }
-add_filter('the_content','webemailprotector_filter');
+
+function webemailprotector_text_replace($widgettext) {
+ $newwidgettext=$widgettext;
+ if ( get_option('wepdb_nuemails') == true){
+  $wep_nuemails = get_option('wepdb_nuemails');
+  for ($i = 1;$i <= $wep_nuemails; $i++) {
+    $wep_email = get_option('wepdb_wep_email_'.$i);
+    $wep_emo = get_option('wepdb_wep_emo_'.$i);
+    $wep_display_name = get_option('wepdb_wep_display_name_'.$i);
+	$wep_validated = get_option('wepdb_wep_validated_'.$i);
+	if ($wep_validated == 'true'){
+     $newtext='<a class="wep_email" href="JavaScript:emo(\''.$wep_emo.'\')" title="'.$wep_display_name.'">'.$wep_display_name.'</a>';
+     //of form [email]
+	 $newwidgettext = str_replace('['.$wep_email.']',$newtext,$newwidgettext); //email in brackets[]
+	}
+  }
+ }
+ return $newwidgettext;
+}
+//do it in the pages
+add_filter('the_content','webemailprotector_filter',100);
+//do it in any widget text
+add_filter('widget_text', 'webemailprotector_text_replace');
 
 ?>

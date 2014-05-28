@@ -1,10 +1,10 @@
-=== WebEmailProtector ===or 
+=== WebEmailProtector === 
 Contributors: dsrodzin
 Donate link: http://www.webemailprotector.com/
 Tags: contact form, captcha, mail, email, EMail, e-mail, E-mail, email hider, address, emo, obfuscate, obfuscation, protect, protection, harvesting, harvester, spam, protection, anti-spam, antispam, block, crawler, encode, encoder, encoding, encrypt, encryption,  encrypter, robots, spam, spambot, spider, virus, anti virus, anti-virus, identity theft, id theft
 Requires at least: 3.0.1
 Tested up to: 3.9
-Stable tag: 1.0.1
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,7 +31,7 @@ The EMO API detects who and what is trying to access the email link on your site
 this request is being made by a bona-fide user. Once a user tries to access your email, your web site automatically contacts 
 our server on which a heuristic validation process is run. We then only return your secured email address if certain criteria are met 
 and others not broken. It all happens in the blink of an eye and does not noticeably slow down the email experience. And just in case you 
-wonder – we do not see or track the email itself, we only authorise the release of your address so your privacy is protected.
+were wondering, we do not see or track the email itself, we only authorise the release of your address so your privacy is protected.
 
 = How do you use it? =
 
@@ -120,6 +120,11 @@ First release onto Wordpress sites 6th May 2014
 
 = 1.0.1 =
 Updated description text
+
+= 1.1.0 =
+Updated validation text to make easier to understand
+Update validation process to remove od code if fails
+Update filter command to only run replacement if valid
 
 == Upgrade Notice ==
 

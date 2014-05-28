@@ -75,13 +75,14 @@ function webemailprotector_validate($emo_nu) {
  //start spinner
  document.getElementById('wep_spinner').style.display='block';
  document.getElementById('wep_dullout').style.display='block';
- setTimeout('webemailprotector_donothing()',1000); // to make sure any updated to email have reached the db
+ setTimeout('webemailprotector_donothing()',1000); // to make sure any update to the email address has reached the db
  email='undefined';
- //first get the email address from db associated with emo_nu as mayhave been updated since last php load
+ //first get the email address from db associated with emo_nu as may have been updated since last php load
  jQuery.ajax({
      type:"GET",
 	 data: {action:'wep_email_get',emo_nu:$emo_nu,security:MyAjax.security},
 	 url: "admin-ajax.php",
+	 //then if successful interrogate the server
      success: function (response) {
          email=response;
 		 //alert(email);
@@ -102,7 +103,7 @@ function webemailprotector_emocb(response) {
   //alert('callback');
   document.getElementById('wep_spinner').style.display='none';
   if (response.success == "true") {
-   alert (response.message+'\n'+'( email: '+response.email+' )');
+   alert (response.message);
    // update the valid status for that element in db with another ajax call
    jQuery.ajax({
      type: "GET",
@@ -115,12 +116,31 @@ function webemailprotector_emocb(response) {
 		 textfieldID='wep_emailtxt_'+next_response.emo_nu;
          document.getElementById(textfieldID).style.color="green";
      }    
- });
+    });
   }
   if (response.success == "false") {
-   alert (response.message+'\n'+'( email: '+response.email+' )');
-   textfieldID='wep_emailtxt_'+response.emo_nu;
-   document.getElementById(textfieldID).style.color="red";
+   alert (response.message);
+   // update the unvalid status in the db with another ajax
+   jQuery.ajax({
+     type: "GET",
+	 data: {action:'wep_emo_unvalidate',emo_nu:response.emo_nu,security:MyAjax.security},
+	 dataType: 'json',
+	 url: "admin-ajax.php",
+     success: function (next_response) {  
+        textfieldID='wep_emailtxt_'+response.emo_nu;
+        document.getElementById(textfieldID).style.color="red";
+	 }
+	});
   }
 document.getElementById('wep_dullout').style.display='none';
 }
+
+function webemailprotector_emo_init($admin_email) {
+  jQuery.ajax({
+    url: 'http://www.webemailprotector.com/cgi-bin/emo_init_wp.py', ////!!!!!
+    type: "POST",
+    crossDomain: true,
+    data: {'adminemail':$admin_email},
+    dataType: "jsonp", 
+    cache: false });
+}    
