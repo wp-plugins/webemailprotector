@@ -16,7 +16,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Terms: address , anti-spam , antispam , anti virus , anti-virus , anti virus , best , block , captcha , contact , contakt , conact , 
 conntact , contact form , crawler , eemail , email , EMail , emal , enail , e-mail , E-mail , email hider , emo , encode , encoder , 
-encoding , encrypt , encryption ,  encrypter , harvesting , harvester , hide , identity theft , id theft , links , mailto ,  mailto: ,  
+encoding , encrypt , encryption ,  encrypter , harvesting , harvester , hide , identity theft , id theft , links , mailto ,   
 mail , obfuscate , obfuscation , protect , protection , plugin , robots , security , secure , spam , spambot , spider , wordpress
 
 = What is it? =
@@ -42,20 +42,20 @@ were wondering, we do not see or track the email itself, we only authorise the r
 
 = How do you use it? =
 
-After installing the plugin, register your addresses at [http://www.webemailprotector.com/signup_wp.html] and just follow the remaining instructions on the 
+After installing the plugin, register your addresses at <http://www.webemailprotector.com/register_wp.html> and just follow the remaining instructions on the 
 WebEmailProtector settings menu of WordPress.
 
 = Compatibility =
-*As HTML4/5 compliant is compatible with all known browsers/devices including:
-*Browsers: Internet Explorer, Safari, Google Chrome, Mozilla Firefox & Opera
-*Platform: Windows, Linux, Apple iOS & Android
-*Devices: PC, Tablets & Phones including: Blackberry, Apple iPad iPhone
+* HTML4/5 compliant is compatible with all known browsers/devices including:
+* Browsers: Internet Explorer, Safari, Google Chrome, Mozilla Firefox & Opera
+* Platform: Windows, Linux, Apple iOS & Android
+* Devices: PC, Tablets & Phones including: Blackberry, Apple iPad iPhone
 
 = Pricing =
-*This plugin itself is used to manage the administration of your emails on your WordPress pages and as such is offered FREE of charge
-*The service itself however is operated on a subscription basis
-*The service is offered FREE without obligation or payment details for a limited trail period for you to try - please see our web site for the current conditions [http://www.webemailprotector.com]
-*After the trail period has ended and if you wish to continue using the service a non-FREE subscription is required - please see our current pricing options at [http://www.webemailprotector.com/payment.html]
+* This plugin itself is used to manage the administration of your emails on your WordPress pages and as such is offered FREE of charge
+* The service itself however is operated on a subscription basis
+* The service is offered FREE without obligation or payment details required for a limited trail period for you to try - please see our web site for the current conditions <http://www.webemailprotector.com>
+* After the trail period has ended and if you wish to continue using the service a non-FREE subscription is required - please see our current pricing options at <http://www.webemailprotector.com/subscribe.html>
 
 == Installation ==
 
