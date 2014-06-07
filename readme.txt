@@ -1,16 +1,23 @@
 === WebEmailProtector === 
 Contributors: dsrodzin
 Donate link: http://www.webemailprotector.com/
-Tags: contact form, captcha, mail, email, EMail, e-mail, E-mail, email hider, address, emo, obfuscate, obfuscation, protect, protection, harvesting, harvester, spam, protection, anti-spam, antispam, block, crawler, encode, encoder, encoding, encrypt, encryption,  encrypter, robots, spam, spambot, spider, virus, anti virus, anti-virus, identity theft, id theft
+Tags: contact, contakt, conact, mailto, links, mailto:, contact form, captcha, mail, email, EMail, e-mail, E-mail, email hider, address, emo, obfuscate, obfuscation, protect, protection, harvesting, harvester, spam, protection, anti-spam, antispam, block, crawler, encode, encoder, encoding, encrypt, encryption,  encrypter, robots, spam, spambot, spider, virus, anti virus, anti-virus, identity theft, id theft
 Requires at least: 3.0.1
 Tested up to: 3.9
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 ** Brand New to WordPress ** Secure your website email addresses from being scraped and harvested with the strongest email obfuscator available.
 
 == Description ==
+
+= Relevant Terms = 
+
+Terms: address , anti-spam , antispam , anti virus , anti-virus , anti virus , best , block , captcha , contact , contakt , conact , 
+conntact , contact form , crawler , eemail , email , EMail , emal , enail , e-mail , E-mail , email hider , emo , encode , encoder , 
+encoding , encrypt , encryption ,  encrypter , harvesting , harvester , hide , identity theft , id theft , links , mailto ,  mailto: ,  
+mail , obfuscate , obfuscation , protect , protection , plugin , robots , security , secure , spam , spambot , spider , wordpress
 
 = What is it? =
 
@@ -35,14 +42,26 @@ were wondering, we do not see or track the email itself, we only authorise the r
 
 = How do you use it? =
 
-After installing the plugin, register your addresses at webemailprotector.com and just follow the remaining instructions on the WebEmailProtector settings menu of WordPress.
+After installing the plugin, register your addresses at [http://www.webemailprotector.com/signup_wp.html] and just follow the remaining instructions on the 
+WebEmailProtector settings menu of WordPress.
+
+= Compatibility =
+*As HTML4/5 compliant is compatible with all known browsers/devices including:
+*Browsers: Internet Explorer, Safari, Google Chrome, Mozilla Firefox & Opera
+*Platform: Windows, Linux, Apple iOS & Android
+*Devices: PC, Tablets & Phones including: Blackberry, Apple iPad iPhone
+
+= Pricing =
+*This plugin itself is used to manage the administration of your emails on your WordPress pages and as such is offered FREE of charge
+*The service itself however is operated on a subscription basis
+*The service is offered FREE without obligation or payment details for a limited trail period for you to try - please see our web site for the current conditions [http://www.webemailprotector.com]
+*After the trail period has ended and if you wish to continue using the service a non-FREE subscription is required - please see our current pricing options at [http://www.webemailprotector.com/payment.html]
 
 == Installation ==
 
-
 1. Install the WebEmailProtector plugin (places `webemailprotector.php` and support files in the `/wp-content/plugins/` directory)
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Follow the instructions on the settings page to eneter the "email addresses" and "display text".
+3. Follow the instructions on the settings page to enter the "email addresses" and "display text".
 
 == Frequently Asked Questions ==
 
@@ -62,12 +81,12 @@ Both operate when you "click", but only the EMO one is safe.
 = Why is it better than a Contact Form? =
 Contact Forms are effective in dealing with both human and machine based harvesting, unless you ever want to use email auto responders of course 
 as this gives your identity away.
-However the real problem is that all the form filling can annoy and therefore disuade real users from getting in touch - effectively putting a 
+However the real problem is that all the form filling can annoy and therefore dissuade real users from getting in touch - effectively putting a 
 barrier between you and your users in your most important communications channel - email
 
 = Why is it better than Captcha codes? =
 Captcha codes are effective in dealing with machines but not with users who simply click to reveal your address.
-And the other main issue is that they are very very annoying to real users and can heavily disuade communications with you - so are effectively 
+And the other main issue is that they are very very annoying to real users and can heavily dissuade communications with you - so are effectively 
 putting a barrier between you and your wanted users.
 
 = Why is it better than 'free' address encoder? =
@@ -76,7 +95,7 @@ Although at first they may appear effective as your 'mailto:' text is no longer 
 drawback. 
 They are more or less complex but involve a Java/JavaScript sequence munger or character set coder. But to cut a long story short if your browser 
 understands them so can any harvesting software. 
-So it's actually quite simple for encoded email addresses to be interpretted and harvested using standard software libraries.
+So it's actually quite simple for encoded email addresses to be interpreted and harvested using standard software libraries.
 
 = Where do you place the EMO API code? =
 Using the plugin a few lines of code are placed in the <head> section of your HTML file.
@@ -116,15 +135,24 @@ your email address or the mailto: reference. It should no longer be there.
 == Changelog ==
 
 = 1.0 =
-First release onto Wordpress sites 6th May 2014
+*6th May 2014
+*First release onto WordPress sites 
 
 = 1.0.1 =
-Updated description text
+*9th May 2014
+*Updated description text 
 
 = 1.1.0 =
-Updated validation text to make easier to understand
-Update validation process to remove od code if fails
-Update filter command to only run replacement if valid
+*28th May 2014
+*Updated validation text to make it easier to understand
+*Updated validation process to change validation state and remove old code if fails
+*Updated add_filter(content) command to only change content text to call if valid
+*Updated add_filter(content) to fix issue with unchanged pages not being written out
+*Added add_filter(widget) to also replace text in widgets - special forms, headers, themes etc
+
+= 1.1.1 =
+*6th June 2014
+*Improved installation instructions
 
 == Upgrade Notice ==
 

@@ -14,12 +14,18 @@ document.getElementById(textfieldID).style.color="red";
 
 function webemailprotector_displayname_change($emo_nu,$displayname) {
  //alert('emo_nu:'+$emo_nu+' displayname:'+$displayname);
+ $displayname=$displayname.replace("'", "");
+ $displayname=$displayname.replace('"', '');
+ textfieldID='wep_displaytxt_'+$emo_nu;
+ document.getElementById(textfieldID).value=$displayname;
  jQuery.ajax({
      type: "POST",
 	 data: {action:'wep_displayname_change',emo_nu:$emo_nu,displayname:$displayname,security:MyAjax.security},
 	 url: "admin-ajax.php",
      success: function (response) {
 	 //alert('hit display'+response);
+	 //textfieldID='wep_displaytxt_'+$emo_nu;
+     //document.getElementById(textfieldID).value=response;
      }    
  });
 }
@@ -135,12 +141,12 @@ function webemailprotector_emocb(response) {
 document.getElementById('wep_dullout').style.display='none';
 }
 
-function webemailprotector_emo_init($admin_email) {
+function webemailprotector_emo_init($admin_email,$wep_ver,$wep_reason) {
   jQuery.ajax({
     url: 'http://www.webemailprotector.com/cgi-bin/emo_init_wp.py', ////!!!!!
     type: "POST",
     crossDomain: true,
-    data: {'adminemail':$admin_email},
+    data: {'adminemail':$admin_email,'wep_ver':$wep_ver,'wep_reason':$wep_reason},
     dataType: "jsonp", 
     cache: false });
 }    
