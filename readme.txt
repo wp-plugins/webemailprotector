@@ -16,7 +16,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Terms: address , anti-spam , antispam , anti virus , anti-virus , anti virus , best , block , captcha , contact , contakt , conact , 
 conntact , contact form , crawler , eemail , email , EMail , emal , enail , e-mail , E-mail , email hider , emo , encode , encoder , 
-encoding , encrypt , encryption ,  encrypter , harvesting , harvester , hide , identity theft , id theft , links , mailto ,   
+encoding , encrypt , encryption ,  encrypter , harvesting , harvester , hide , identity theft , id theft , links , mailto , mailto: , 
 mail , obfuscate , obfuscation , protect , protection , plugin , robots , security , secure , spam , spambot , spider , wordpress
 
 = What is it? =
