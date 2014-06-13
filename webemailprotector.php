@@ -2,8 +2,8 @@
 /*
  * Plugin Name: WebEmailProtector
  * Plugin URI: http://www.webemailprotector.com
- * Description: ** Brand New to WordPress ** Secure your website email addresses from being scraped and harvested with the strongest email obfuscator available.
- * Version: 1.1.1
+ * Description: Securely list your contact email addresses with the strongest protection against harvesters and scrapers. Go to the WebEmailProtector <a href="options-general.php?page=webemailprotector_plugin_options.php">Settings</a> menu to configure.
+ * Version: 1.1.2
  * Author: David Srodzinski
  * Author URI: http://www.webemailprotector.com/about.html
  * License: GPL2
@@ -92,7 +92,7 @@ function webemailprotector_plugin_options() {
   $wep_current_user = wp_get_current_user();
   $wep_current_user_email = $wep_current_user->user_email;
   //set up version ver
-  $wep_ver='v1.1.1';
+  $wep_ver='v1.1.2';
   $wep_init = false;
   if ( get_option('wepdb_wep_ver') == true ) {
    if (get_option('wepdb_wep_ver') != $wep_ver){
@@ -102,7 +102,10 @@ function webemailprotector_plugin_options() {
 	 $wep_init = true;}
   }
   else { 
-   $wep_reason='fresh install';
+   if ( get_option('wepdb_nuemails') == true ) {
+    $wep_reason='upgrade from pre v1.1.1';}
+   else {
+    $wep_reason='new install';}	
    add_option('wepdb_wep_ver',$wep_ver);
    $wep_init = true;
   }
@@ -236,7 +239,9 @@ function webemailprotector_plugin_options() {
   echo '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; do not use the email address itself as this will still leave you vulnerable. </p>';
   echo '<p>You can add additional email addresses using the <input id="submit" class="button add another" type="button" value="add another"> button.</p>';
   echo '<p>You can add delete any email addresses using the <input id="delete" class="button add another" type="button" value="delete"> button.</p>';
-  echo '<p>As an option you can change the style of the email address appearance using CSS. For those familiar with CSS use the class <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"wep_email" of the &#60;a&#62; element using the selector a.wep_email {}.</p>';
+  echo '<p>As an option you can change the style of the email address appearance using CSS. For those familiar with CSS use the class <br>';
+  echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"wep_email" of the &#60;a&#62; element using the selector a.wep_email {}.';
+  echo '&nbsp;And look out for our new WebEmailProtector Styler - an email <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stylise plugin- coming soon!</p>';
   echo '<p><br></p>';
 
   //set up the spinner
