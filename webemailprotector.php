@@ -2,7 +2,7 @@
 /*
  * Plugin Name: WebEmailProtector
  * Plugin URI: http://www.webemailprotector.com
- * Description: Securely list your contact email addresses with the strongest protection against harvesters and scrapers. Go to the WebEmailProtector <a href="options-general.php?page=webemailprotector_plugin_options.php">Settings</a> menu to configure.
+ * Description: Securely list your contact email addresses with the strongest protection against harvesters and scrapers. Go to the WebEmailProtector Settings menu to configure.
  * Version: 1.1.3
  * Author: David Srodzinski
  * Author URI: http://www.webemailprotector.com/about.html
