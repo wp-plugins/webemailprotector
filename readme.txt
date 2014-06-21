@@ -4,7 +4,7 @@ Donate link: http://www.webemailprotector.com/
 Tags: contact, contakt, conact, mailto, links, mailto:, contact form, captcha, mail, email, EMail, e-mail, E-mail, email hider, address, emo, obfuscate, obfuscation, protect, protection, harvesting, harvester, spam, protection, anti-spam, antispam, block, crawler, encode, encoder, encoding, encrypt, encryption,  encrypter, robots, spam, spambot, spider, virus, anti virus, anti-virus, identity theft, id theft
 Requires at least: 3.0.1
 Tested up to: 3.9
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -157,6 +157,10 @@ your email address or the mailto: reference. It should no longer be there.
 = 1.1.2 =
 *13th June 2014
 *Improved description text in the main .php
+
+= 1.1.3 =
+*21st June 2014
+*Sorted header issue due to lingering old release in CSV
 
 == Upgrade Notice ==
 
