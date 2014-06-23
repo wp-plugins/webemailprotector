@@ -1,36 +1,36 @@
 === WebEmailProtector === 
 Contributors: dsrodzin
-Donate link: http://www.webemailprotector.com/
-Tags: contact, contakt, conact, mailto, links, mailto:, contact form, captcha, mail, email, EMail, e-mail, E-mail, email hider, address, emo, obfuscate, obfuscation, protect, protection, harvesting, harvester, spam, protection, anti-spam, antispam, block, crawler, encode, encoder, encoding, encrypt, encryption,  encrypter, robots, spam, spambot, spider, virus, anti virus, anti-virus, identity theft, id theft
+Donate link: http://www.webemailprotector.com/register_wp.html
+Tags: secure email address, mail, email, EMail, e-mail, E-mail, email hider, address, emo, obfuscate, obfuscation, protect, protection, harvesting, harvester, spam, protection, anti-spam, antispam, block, crawler, encode, encoder, encoding, encrypt, encryption,  encrypter, robots, spam, spambot, spider, virus, anti virus, anti-virus, identity theft, id theft,contact, contakt, conact, mailto, links, mailto:, contact form, captcha,
 Requires at least: 3.0.1
 Tested up to: 3.9
 Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-** Brand New to WordPress ** Secure your website email addresses from being scraped and harvested with the strongest email obfuscator available.
+Secure your website email addresses from being scraped and harvested with the strongest email obfuscator available.
 
 == Description ==
 
-= Relevant Terms = 
-
-Terms: address , anti-spam , antispam , anti virus , anti-virus , anti virus , best , block , captcha , contact , contakt , conact , 
-conntact , contact form , crawler , eemail , email , EMail , emal , enail , e-mail , E-mail , email hider , emo , encode , encoder , 
-encoding , encrypt , encryption ,  encrypter , harvesting , harvester , hide , identity theft , id theft , links , mailto , mailto: , 
-mail , obfuscate , obfuscation , protect , protection , plugin , robots , security , secure , spam , spambot , spider , wordpress
-
-= What is it? =
+Secure your website email addresses and hide them from being scraped and harvested with the strongest email obfuscator available. Stop spammers, virus 
+attacks and ID theft perpetrators at source and keep your address private. In our belief this is the only email cloaking solution that actually works.
 
 WebEmailProtector is a professional grade web-site email obfuscator (aka EMO) service. Using it on your web-site provides the strongest 
 anti-harvesting security available on the web using secure server-side authentication with heuristics. Bona-fide visitors are still 
-able to easily contact you via your existing email, seamlessly, but harvesters are stopped in their tracks. This cuts out spammers, virus 
-and ID theft perpetrators at source.
+able to easily contact you via your existing email, seamlessly, but harvesters are stopped in their tracks. 
 
 Once the plugin is installed, your existing emails registered with WebEmailProtector.com and you complete the simple set-up procedure through the 
 settings menu, you can place your email address anywhere on your WordPress site and the rest is taken care of. Each link will then appear to work 
 exactly like a regular email link. Any visitor can simply click on your email to seamlessly open their favourite email tool. However with 
 our service there is a difference: since your address is no longer contained in the link itself, it is safe from being harvested and misused. 
 In-fact we believe that it is so secure that you can do away with cumbersome Contact Forms and Captchas completely.
+
+= Relevant Keywords = 
+
+Keywords: email, email address , anti-spam , antispam , anti virus , anti-virus , anti virus , best , block , captcha , contact , contakt , conact , 
+conntact , contact form , crawler , eemail , email , EMail , emal , enail , e-mail , E-mail , email hider , emo , encode , encoder , 
+encoding , encrypt , encryption ,  encrypter , harvesting , harvester , hide , identity theft , id theft , links , mailto , mailto: , 
+mail , obfuscate , obfuscation , protect , protection , plugin , robots , security , secure , spam , spambot , spider , wordpress
  
 = What does it do? =
 
@@ -52,10 +52,9 @@ WebEmailProtector settings menu of WordPress.
 * Devices: PC, Tablets & Phones including: Blackberry, Apple iPad iPhone
 
 = Pricing =
-* This plugin itself is used to manage the administration of your emails on your WordPress pages and as such is offered FREE of charge
-* The service itself however is operated on a subscription basis
-* The service is offered FREE without obligation or payment details required for a limited trail period for you to try - please see our web site for the current conditions <http://www.webemailprotector.com>
-* After the trail period has ended and if you wish to continue using the service a non-FREE subscription is required - please see our current pricing options at <http://www.webemailprotector.com/subscribe.html>
+* This plugin is used to administrate the WebEmailProtector service on your WordPress pages and is offered FREE of charge
+* The WebEmailProtector service itself is offered FREE to try and see for a limited period of 2 months - no payment details taken.
+* At the end of the FREE trial period we ask for contributions via a low cost subscription to cover ongoing development and support
 
 == Installation ==
 
