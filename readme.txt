@@ -21,7 +21,7 @@ able to easily contact you via your existing email, seamlessly, but harvesters a
 
 Once the plugin is installed, your existing emails registered with WebEmailProtector.com and you complete the simple set-up procedure through the 
 settings menu, you can place your email address anywhere on your WordPress site and the rest is taken care of. Each link will then appear to work 
-exactly like a regular email link. Any visitor can simply click on your email to seamlessly open their favourite email tool. However with 
+exactly like a regular email link. Any visitor can simply click on your email to send you a message using their favourite email tool. However with 
 our service there is a difference: since your address is no longer contained in the link itself, it is safe from being harvested and misused. 
 In-fact we believe that it is so secure that you can do away with cumbersome Contact Forms and Captchas completely.
 
