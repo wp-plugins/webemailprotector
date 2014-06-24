@@ -58,9 +58,16 @@ WebEmailProtector settings menu of WordPress.
 
 == Installation ==
 
-1. Install the WebEmailProtector plugin (places `webemailprotector.php` and support files in the `/wp-content/plugins/` directory)
-2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Follow the instructions on the settings page to enter the "email addresses" and "display text".
+1. Go to Plugins in the Admin menu
+2. Click on the button 'Add New'
+3. Search for WebEmailProtector and click 'Install Now' or click on the upload link to upload webemailprotector.zip
+4. Click on Activate plugin
+5. Click on the Settings->WebEmailProtector menu 
+6. Follow the instructions on the settings page to enter the "secured email addresses" and "display text"
+7. Register each email address at <http://www.webemailprotector.com/register_wp.html>
+8. Validate each email addresses on the settings menu
+9. Place the validated addresses in square brackets anywhere on your site e.g. [youremail@yourdomain.com]
+
 
 == Frequently Asked Questions ==
 
@@ -127,39 +134,38 @@ your email address or the mailto: reference. It should no longer be there.
 == Screenshots ==
 
 1. This is how the email address looks like on a web page '/assets/screenshot-1.png`
-
 2. This is what the same html code looks like '/assets/screenshot-2.png' (the real code has been replaced with ####-####-####-####)
 
 
 == Changelog ==
 
 = 1.0 =
-*6th May 2014
-*First release onto WordPress sites 
+* 6th May 2014
+* First release onto WordPress sites 
 
 = 1.0.1 =
-*9th May 2014
-*Updated description text 
+* 9th May 2014
+* Updated description text 
 
 = 1.1.0 =
-*28th May 2014
-*Updated validation text to make it easier to understand
-*Updated validation process to change validation state and remove old code if fails
-*Updated add_filter(content) command to only change content text to call if valid
-*Updated add_filter(content) to fix issue with unchanged pages not being written out
-*Added add_filter(widget) to also replace text in widgets - special forms, headers, themes etc
+* 28th May 2014
+* Updated validation text to make it easier to understand
+* Updated validation process to change validation state and remove old code if fails
+* Updated add_filter(content) command to only change content text to call if valid
+* Updated add_filter(content) to fix issue with unchanged pages not being written out
+* Added add_filter(widget) to also replace text in widgets - special forms, headers, themes etc
 
 = 1.1.1 =
-*6th June 2014
-*Improved installation instructions
+* 6th June 2014
+* Improved installation instructions
 
 = 1.1.2 =
-*13th June 2014
-*Improved description text in the main .php
+* 13th June 2014
+* Improved description text in the main .php
 
 = 1.1.3 =
-*21st June 2014
-*Sorted header issue due to lingering old release in CSV
+* 21st June 2014
+* Sorted header issue due to lingering old release in CSV
 
 == Upgrade Notice ==
 
