@@ -3,7 +3,7 @@
  * Plugin Name: WebEmailProtector
  * Plugin URI: http://www.webemailprotector.com
  * Description: Securely list your contact email addresses with the strongest protection against harvesters and scrapers. Go to the WebEmailProtector <a href="options-general.php?page=webemailprotector_plugin_options.php">Settings</a> menu to configure.
- * Version: 1.1.3
+ * Version: 1.1.4
  * Author: David Srodzinski
  * Author URI: http://www.webemailprotector.com/about.html
  * License: GPL2
@@ -92,7 +92,7 @@ function webemailprotector_plugin_options() {
   $wep_current_user = wp_get_current_user();
   $wep_current_user_email = $wep_current_user->user_email;
   //set up version ver
-  $wep_ver='v1.1.3';
+  $wep_ver='v1.1.4';
   $wep_init = false;
   if ( get_option('wepdb_wep_ver') == true ) {
    if (get_option('wepdb_wep_ver') != $wep_ver){
@@ -129,7 +129,7 @@ function webemailprotector_plugin_options() {
     if ( get_option('wepdb_wep_emo_'.$i) == true ) { delete_option('wepdb_wep_emo_'.$i) ; }
 	add_option('wepdb_wep_emo_'.$i,'xxxx-xxxx-xxxx-xxxx-xxxx');
     if ( get_option('wepdb_wep_display_name_'.$i) == true ) { delete_option('wepdb_wep_display_name_'.$i) ; }
-    add_option('wepdb_wep_display_name_'.$i,'your web text '.$i);
+    add_option('wepdb_wep_display_name_'.$i,'your display text '.$i);
 	if ( get_option('wepdb_wep_validated_'.$i) == true) { delete_option('wepdb_wep_validated_'.$i) ; }
 	add_option('wepdb_wep_validated_'.$i,'false');
     }
@@ -208,7 +208,7 @@ function webemailprotector_plugin_options() {
   echo '<tr><td></td><td><green>green=validated</green>/<red>red=unvalidated</red></td></tr>';
   echo '<tr></tr>';
   echo '<tr><td></td><td>';  
-  echo '<input id="submit" class="button add another" type="button" value="add another" onclick="webemailprotector_emo_new('.$php_pathname.')">';
+  echo '<input id="submit" class="button add another" type="button" value="add another" onclick="webemailprotector_emo_new()">';
   echo '</td></tr>';
   echo '</table>';
   //script to keep table updated on refresh properly
