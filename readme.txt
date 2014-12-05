@@ -4,7 +4,7 @@ Donate link: http://www.webemailprotector.com/register_wp.html
 Tags: secure email address, mail, email, EMail, e-mail, E-mail, email hider, address, emo, obfuscate, obfuscation, protect, protection, harvesting, harvester, spam, protection, anti-spam, antispam, block, crawler, encode, encoder, encoding, encrypt, encryption,  encrypter, robots, spam, spambot, spider, virus, anti virus, anti-virus, identity theft , id theft , contact , contakt , conact , mailto , links , email link , email click , email address , mailto: , contact form , captcha , kontact , kontakt , kontaki , kontackty 
 Requires at least: 3.0.1
 Tested up to: 3.9
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -175,6 +175,10 @@ your email address or the mailto: reference. It should no longer be there. And f
 * 2nd August 2014
 * Added more info on free for Not For Profits
 * Added http search tool link
+
+= 1.1.5 =
+* 5th Dec 2014
+* Updated assets images
 
 == Upgrade Notice ==
 
