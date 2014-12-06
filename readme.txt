@@ -136,10 +136,10 @@ your email address or the mailto: reference. It should no longer be there. And f
 
 == Screenshots ==
 
-This is a screenshot of the WebEmailProtector WordPress plugin administration panel once installed screenshot1.png
-This is a screenshot of an example html showing what a standard or unprotected linked email address looks like on a web page screenshot2.png
-This is a screenshot of an example html showing what a webemailprotector linked email address looks like on a web page (the real code has been replaced with ####-####-####-####) screenshot3.png
-This is a screenshot showing how both the above would appear to a webpage visitor screenshot4.png
+1. This is a screenshot of the WebEmailProtector WordPress plugin administration panel once installed screenshot-1.png
+2. This is a screenshot of an example html showing what a standard or unprotected linked email address looks like on a web page screenshot-2.png
+3. This is a screenshot of an example html showing what a webemailprotector linked email address looks like on a web page (the real code has been replaced with ####-####-####-####) screenshot-3.png
+4, This is a screenshot showing how both the above would appear to a webpage visitor screenshot-4.png
 
 == Changelog ==
 
