@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: Web Email Protector for WordPress
+ * Plugin Name: WebEmailProtector
  * Plugin URI: http://www.webemailprotector.com
  * Description: Securely list your contact email addresses on your WordPress website with the strongest protection against harvesters and scrapers. Go to the WebEmailProtector <a href="options-general.php?page=webemailprotector_plugin_options.php">Settings</a> menu to configure.
  * Version: 1.1.6
