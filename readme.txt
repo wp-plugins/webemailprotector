@@ -3,8 +3,8 @@ Contributors: dsrodzin
 Donate link: http://www.webemailprotector.com/register_wp.html
 Tags: secure email address, mail, email, EMail, e-mail, E-mail, email hider, address, emo, obfuscate, obfuscation, protect, protection, harvesting, harvester, spam, protection, anti-spam, antispam, block, crawler, encode, encoder, encoding, encrypt, encryption,  encrypter, robots, spam, spambot, spider, virus, anti virus, anti-virus, identity theft , id theft , contact , contakt , conact , mailto , links , email link , email click , email address , mailto: , contact form , captcha , kontact , kontakt , kontaki , kontackty 
 Requires at least: 3.0.1
-Tested up to: 3.9
-Stable tag: 1.1.5
+Tested up to: 4.1
+Stable tag: 1.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,16 +12,19 @@ Secure your website email addresses from being scraped and harvested with the st
 
 == Description ==
 
-Secure your website email addresses and hide them from being scraped and harvested with the strongest email obfuscator available, 
-and we believe the only one that works 100%. Stop spammers, virus attacks and ID theft perpetrators at source and keep your address private. 
-Check how secure your site is using our email finder tool at <http://www.webemailprotector.com/website-email-security-check.html>.
+Welcome to the WebEmailProtector plugin for WordPress. This is the latest version, tested upto WordPress version 4.1. With 100% satisfaction amongst its users so far we like to this that you will like it - but please review and leave your comments!
 
-WebEmailProtector is a professional grade web-site email obfuscator (aka EMO) service. Using it on your web-site provides the strongest 
-anti-harvesting security available on the web using secure server-side authentication with heuristics. Bona-fide visitors are still 
-able to easily contact you via your existing email, seamlessly, but harvesters are stopped in their tracks. 
+Using WebEmailProtector you can secure the email addresses used on your website pages and hide them from being scraped and harvested. We are confident in saying that this is the strongest email obfuscator available, 
+and therefore the best because it is much more than just a JavaScript based encoder. So stop spammers, virus attacks and ID theft perpetrators at source and keep your address private. Simple to use and fully supported.
+
+As a start why not check how secure your existing pages are using our email finder tool at <http://www.webemailprotector.com/website-email-security-check.html>?
+
+So why do we believe that WebEmailProtector is the best? Simple: we use secure server-side authentication with heuristics. 
+In laymans's terms this means that your email address is stored on our server not on your website. Because of this we can protect its release by looking at who and what is requesting it, but it does mean that you must register your address with us to use. 
+Bona-fide visitors are still able to easily contact you via your existing email, seamlessly, but harvesters are stopped in their tracks. 
 
 Once the plugin is installed, your existing emails registered with WebEmailProtector.com and you complete the simple set-up procedure through the 
-settings menu, you can place your email address anywhere on your WordPress site and the rest is taken care of. Each link will then appear to work 
+settings menu, you can place your email address(es) anywhere on your WordPress site and the rest is taken care of. Each link will then appear to work 
 exactly like a regular email link. Any visitor can simply click on your email to send you a message using their favourite email tool. However with 
 our service there is a difference: since your address is no longer contained in the link itself, it is safe from being harvested and misused. 
 In-fact we believe that it is so secure that you can do away with cumbersome Contact Forms and Captchas completely.
@@ -179,6 +182,11 @@ your email address or the mailto: reference. It should no longer be there. And f
 = 1.1.5 =
 * 5th Dec 2014
 * Updated assets images
+
+= 1.1.6 =
+* 6th Jan 2015
+* Upgraded to 1.4
+* Added email response confirmation of version activation & verification
 
 == Upgrade Notice ==
 

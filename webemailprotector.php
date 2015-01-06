@@ -1,9 +1,9 @@
 <?php
 /*
- * Plugin Name: WebEmailProtector
+ * Plugin Name: Web Email Protector for WordPress
  * Plugin URI: http://www.webemailprotector.com
- * Description: Securely list your contact email addresses with the strongest protection against harvesters and scrapers. Go to the WebEmailProtector <a href="options-general.php?page=webemailprotector_plugin_options.php">Settings</a> menu to configure.
- * Version: 1.1.5
+ * Description: Securely list your contact email addresses on your WordPress website with the strongest protection against harvesters and scrapers. Go to the WebEmailProtector <a href="options-general.php?page=webemailprotector_plugin_options.php">Settings</a> menu to configure.
+ * Version: 1.1.6
  * Author: David Srodzinski
  * Author URI: http://www.webemailprotector.com/about.html
  * License: GPL2
@@ -92,7 +92,7 @@ function webemailprotector_plugin_options() {
   $wep_current_user = wp_get_current_user();
   $wep_current_user_email = $wep_current_user->user_email;
   //set up version ver
-  $wep_ver='v1.1.5';
+  $wep_ver='v1.1.6';
   $wep_init = false;
   if ( get_option('wepdb_wep_ver') == true ) {
    if (get_option('wepdb_wep_ver') != $wep_ver){
@@ -200,7 +200,7 @@ function webemailprotector_plugin_options() {
    echo '<td><input type="text" id="wep_emailtxt_'.$i.'" style="'.$color.';" onkeyup="webemailprotector_email_change(\''.$i.'\',this.value)" name="wep_email_'.$i.'" value="'.$emo_email.'"></td>';
    echo '<td style="font-size:30px;padding-bottom:10px;">]</td>';
    echo '<td><input type="text" id="wep_displaytxt_'.$i.'" onkeyup="webemailprotector_displayname_change(\''.$i.'\',this.value)" name="wep_name_'.$i.'" value="'.$display_name.'"></td>';
-   echo '<td><input id="wep_validate_'.$i.'" type="button" class="button add another" value="validate" onclick="webemailprotector_validate(\''.$i.'\')"></td>';
+   echo '<td><input id="wep_validate_'.$i.'" type="button" class="button add another" value="validate" onclick="webemailprotector_validate(\''.$i.'\','.$wep_current_user_email.')"></td>';
    echo '<td><input id="wep_delete_'.$i.'" type="button" class="button add another" value="delete" onclick="webemailprotector_emo_delete(\''.$i.'\')"></td>';
    echo '</tr>';
   }

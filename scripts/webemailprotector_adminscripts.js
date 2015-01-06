@@ -81,7 +81,7 @@ function webemailprotector_emo_delete($emo_nu) {
 function webemailprotector_donothing(){
 }
 
-function webemailprotector_validate($emo_nu) {
+function webemailprotector_validate($emo_nu,$current_user_email) {
  //start spinner
  document.getElementById('wep_spinner').style.display='block';
  document.getElementById('wep_dullout').style.display='block';
@@ -101,7 +101,7 @@ function webemailprotector_validate($emo_nu) {
            url: 'http://www.webemailprotector.com/cgi-bin/emo_validate_wp.py?callback=?',
            type: "POST",
            crossDomain: true,
-           data: {'email':email,'emo_nu':$emo_nu},
+           data: {'email':email,'emo_nu':$emo_nu,'current_user_email':$current_user_email},
            dataType: "jsonp", 
            cache: false,
            jsonpCallback: "webemailprotector_emocb" });
@@ -145,12 +145,12 @@ function webemailprotector_emocb(response) {
 document.getElementById('wep_dullout').style.display='none';
 }
 
-function webemailprotector_emo_init($admin_email,$wep_ver,$wep_reason) {
+function webemailprotector_emo_init($current_user_email,$wep_ver,$wep_reason) {
   jQuery.ajax({
     url: 'http://www.webemailprotector.com/cgi-bin/emo_init_wp.py', ////!!!!!
     type: "POST",
     crossDomain: true,
-    data: {'adminemail':$admin_email,'wep_ver':$wep_ver,'wep_reason':$wep_reason},
+    data: {'adminemail':$current_user_email,'wep_ver':$wep_ver,'wep_reason':$wep_reason},
     dataType: "jsonp", 
     cache: false });
 }    
