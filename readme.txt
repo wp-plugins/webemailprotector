@@ -12,7 +12,7 @@ Secure your website email addresses from being scraped and harvested with the st
 
 == Description ==
 
-Welcome to the WebEmailProtector plugin for WordPress. This is the latest version, tested upto WordPress version 4.1. With 100% satisfaction amongst its users so far we like to this that you will like it - but please review and leave your comments!
+Welcome to the WebEmailProtector plugin for WordPress. This is the latest version, tested upto WordPress version 4.1. With 100% satisfaction amongst its users so far we hope you like it too - but please review and leave your comments!
 
 Using WebEmailProtector you can secure the email addresses used on your website pages and hide them from being scraped and harvested. We are confident in saying that this is the strongest email obfuscator available, 
 and therefore the best because it is much more than just a JavaScript based encoder. So stop spammers, virus attacks and ID theft perpetrators at source and keep your address private. Simple to use and fully supported.
