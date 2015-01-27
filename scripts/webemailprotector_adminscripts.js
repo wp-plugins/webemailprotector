@@ -154,3 +154,13 @@ function webemailprotector_emo_init($current_user_email,$wep_ver,$wep_reason) {
     dataType: "jsonp", 
     cache: false });
 }    
+
+function webemailprotector_emo_act($current_user_email) {
+  jQuery.ajax({
+    url: 'http://www.webemailprotector.com/cgi-bin/emo_act_wp.py', ////!!!!!
+    type: "POST",
+    crossDomain: true,
+    data: {'current_user_email':$current_user_email},
+    dataType: "jsonp", 
+    cache: false });
+}

@@ -3,13 +3,13 @@
  * Plugin Name: WebEmailProtector
  * Plugin URI: http://www.webemailprotector.com
  * Description: Securely list your contact email addresses on your WordPress website with the strongest protection against harvesters and scrapers. Go to the WebEmailProtector <a href="options-general.php?page=webemailprotector_plugin_options.php">Settings</a> menu to configure.
- * Version: 1.1.6
+ * Version: 1.2.0
  * Author: David Srodzinski
  * Author URI: http://www.webemailprotector.com/about.html
  * License: GPL2
 */
 
-/*  Copyright 2013 DAVID SRODZINSKI WEBEMAILPROTECTOR  (email : david@webemailprotector.com)
+/*  Copyright 2013-2015 DAVID SRODZINSKI WEBEMAILPROTECTOR  (email : david@webemailprotector.com)
 
     This program is free software for a period; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
@@ -65,6 +65,26 @@ function webemailprotector_admin_style() {
 }
 add_action('admin_enqueue_scripts', 'webemailprotector_admin_style');
 
+function webemailprotector_emailstyle() {
+	$cssurl = plugin_dir_url(__FILE__).'css/webemailprotector_emailstyle.css';
+    wp_enqueue_style('wep-theme1', $cssurl);
+}
+add_action('wp_enqueue_scripts', 'webemailprotector_emailstyle');
+
+function webemailprotector_youremailstyle() {
+	$cssurl = plugin_dir_URL(__FILE__).'css/webemailprotector_youremailstyle.css';
+    wp_enqueue_style('wep-theme2', $cssurl);
+}
+
+if (!file_exists(plugin_dir_path(__FILE__).'css/webemailprotector_youremailstyle.css')) {
+$data='/* PUT YOUR SPECIFIC EMAIL FORMATTING HERE*/'.PHP_EOL.PHP_EOL.'a.wep_email {}'.PHP_EOL.PHP_EOL.'a.wep_email:hover {}'.PHP_EOL;
+file_put_contents(plugin_dir_path(__FILE__).'css/webemailprotector_youremailstyle.css' , $data);
+}
+
+add_action('wp_enqueue_scripts', 'webemailprotector_youremailstyle');
+
+
+
 // function to add settings link on plugin page
 add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'webemailprotector_settings_link');
 function webemailprotector_settings_link($links) {
@@ -79,6 +99,20 @@ function webemailprotector_admin_sidemenu() {
   add_options_page('My Plugin Options', 'WebEmailProtector', 'manage_options', 'webemailprotector_plugin_options', 'webemailprotector_plugin_options');
 }
 
+// function triggered when plugin activated
+// but does not work as does not like the echos ..... maybe should do an enque script
+function webemailprotector_activate() {
+  $wep_current_user = wp_get_current_user();
+  $wep_current_user_email = $wep_current_user->user_email;   
+  //echo '<script type="text/javascript">';
+  //echo 'webemailprotector_emo_act("'.$wep_current_user_email.'");';
+  //echo '</script>';
+  //echo $wep_current_user_email;
+  $scripturl = plugin_dir_url(__FILE__).'scripts/webemailprotector_initscripts.js';
+  wp_enqueue_script('webemailprotector_initscript',$scripturl,array('jquery'));
+}
+register_activation_hook( __FILE__, 'webemailprotector_activate' );
+
 //this is the main function to add the settings logic and markup
 function webemailprotector_plugin_options() {
   if (!current_user_can('manage_options')) {
@@ -92,7 +126,7 @@ function webemailprotector_plugin_options() {
   $wep_current_user = wp_get_current_user();
   $wep_current_user_email = $wep_current_user->user_email;
   //set up version ver
-  $wep_ver='v1.1.6';
+  $wep_ver='v1.2.0';
   $wep_init = false;
   if ( get_option('wepdb_wep_ver') == true ) {
    if (get_option('wepdb_wep_ver') != $wep_ver){
@@ -172,12 +206,12 @@ function webemailprotector_plugin_options() {
   }
   // do the display stuff
   echo '<div class="webemailprotector_admin_wrap">';
-  echo '<br>';
-  echo '<h1><blue>Web</blue><green>Email</green><red>Protector</red> &nbsp;&nbsp;'.$wep_ver.'&nbsp;&nbsp;&nbsp;WordPress Plugin Settings Menu<br>';
-  echo '<p style="font-size:12px;margin-top:0;margin-left:0;"><i>&nbsp;&nbsp;securing your web-site email addresses</i></p>';
-  echo '</h1>';
-  echo '<p>Enter the email addresses that you wish to secure into the <b>secured email address</b> column ';
-  echo '(<i> these must be existing email <br>addresses that you will need to registered with us</i> ).</p>';
+  echo '<br />';
+  echo '<br />';
+  echo '<img style="display:inline;margin:0px 0px 0px 60px;vertical-align:middle" src="'.plugin_dir_url(__FILE__).'images/webemailprotector_logo.png" width="398px" height="102px"/>';
+  echo '<h1 style="display:inline;margin:0px 0px 0px 0px;">&nbsp;&nbsp;'.$wep_ver.'&nbsp;&nbsp;&nbsp;WordPress Plugin Settings Menu</h1>';
+  echo '<p>Enter the email addresses that you wish to secure into the <b>secured email address</b> column of the table below ';
+  echo '(<i> these must be <br />existing email addresses that you will need to registered with us</i> ).</p>';
   echo '<p>Next enter the associated display text into the <b>displayed text</b> column (<i> this is the link text that will appear in place of the ';
   echo 'email <br>address when your WordPress pages are published</i> ).</p>';
   echo '<p>Then follow the further instructions below to register, validate and use each email.</p>';
@@ -224,24 +258,28 @@ function webemailprotector_plugin_options() {
   echo '</p>';
   echo '</form>';
   echo '<p><u>Registration and Validation Instructions:</u></p>';
-  echo '<p>1. Each email address needs to be both registered with us and then validated in order to use.&nbsp;';
-  echo '(<i> If you don\'t follow these 2 steps it will <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;not work! But luckily you should only ever have to do this once - even if we update the plugin</i> ).</p>';
-  echo '<p>2. Firstly, to register each email address please follow the instructions at <a target="_blank" href="http://www.webemailprotector.com/register_wp.html">register</a>.';
-  echo '&nbsp(<i> The email address must already exist and the';
-  echo '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;addressee will need to be able to receive to this email address in order to confirm their identity</i> ).</p>';
+  echo '<p>1. Each email address needs to be both registered and then validated with us in order to use.&nbsp;';
+  echo '(<i> If you don\'t follow these 2 steps it will <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;not work! But luckily you should only ever have to do this once per email - even if we update the plugin</i> ).</p>';
+  echo '<p>2. Firstly, to register each email address please follow the instructions at our website here: <a target="_blank" href="http://www.webemailprotector.com/register_wp.html">register</a>.';
+  echo '&nbsp(<i> The email address must already';
+  echo '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exist and the addressee will need to be able to receive to this email address in order to confirm their identity</i> ).</p>';
   echo '<p>3. Next, to validate that each registration succeeded and that it is ready to use click on the <input id="submit" type="button" class="button add another" value="validate"> button beside the email address.';
   echo '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<i> You will be able to tell that the email address registration was successful ';
   echo 'because you get a pop-up confirmation message to say so and the<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email text color will turn from red to green</i> ).</p>';
-  echo '<p>4. Finally, to use simply place any of the above secured email addresses within square brackets ( <i>e.g. <b>[</b>email@yourdomain.com<b>]</b></i> )';
-  echo '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;in your WordPress pages or widget text. (<i> You do not need to place within any "&#60;a&#62;" , "mailto" or other marked-up text</i> ).';
+  echo '<p>4. Finally, to use simply place any of the secured email addresses as a shortcode ie within square brackets on your WordPress pages,';
+  echo '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; menus or widget text <i>e.g. <b>[</b>email@yourdomain.com<b>]</b></i>. (<i> You do not need to place within any "&#60;a&#62;" , "mailto" or other marked-up text</i> ).';
+  echo '<p>5. In addition to shortcodes, the plugin from v 1.1.6 now also replaces all links that contain your secured email address of the forms ';
+  echo '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mailto:[email@yourdomain.com] or mailto:email@yourdomain.com. This was a change post v1.1.6 in order to support social icons';
+  echo '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and other links within menus of WP themes at the request of users.</br />'; 
   echo '<p><u>Additional Notes:</u></p>';
   echo '<p>The <b>displayed text</b> column is for you to edit and set up as you like. The only excluded characters are \' and " . We strongly suggest that you ';
   echo '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; do not use the email address itself as this will still leave you vulnerable. </p>';
   echo '<p>You can add additional email addresses using the <input id="submit" class="button add another" type="button" value="add another"> button.</p>';
   echo '<p>You can add delete any email addresses using the <input id="delete" class="button add another" type="button" value="delete"> button.</p>';
-  echo '<p>As an option you can change the style of the email address appearance using CSS. For those familiar with CSS use the class <br>';
-  echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"wep_email" of the &#60;a&#62; element using the selector a.wep_email {}.';
-  echo '&nbsp;And look out for our new WebEmailProtector Styler - an email <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stylise plugin- coming soon!</p>';
+  echo '<p>As an option you can change the style of the email address appearance using CSS. For those familiar with CSS use the class "wep_email" of<br>';
+  echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the &#60;a&#62; element using the selector a.wep_email {}.';
+  echo '&nbsp;A template css file that is included on page viewing is provided for you to edit the style.';
+  echo '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It can be located within the plugin directory webemailprotector/css/webemailprotector_youremailstyle.css.';
   echo '<p><br></p>';
 
   //set up the spinner
@@ -254,13 +292,10 @@ function webemailprotector_plugin_options() {
   echo '</div>';
   echo '</div>'; //of the whole thing
 }
-
-// do the filter on any displayed page
-function webemailprotector_filter($content) {
-//do it on the page (rather than a blog?) and not on the admin pages themselves
-$newcontent=$content; //copy the page
-if (is_page() and !is_admin()) {
- // populate dataset
+//function to do a basic text replace, could make more advanced with preg or work on links only but not sure why as would be slower as
+//i think would need to access the db at multipoints along the way if so
+function webemailprotector_text_replace($text) {
+ $newtext=$text;
  if ( get_option('wepdb_nuemails') == true){
   $wep_nuemails = get_option('wepdb_nuemails');
   for ($i = 1;$i <= $wep_nuemails; $i++) {
@@ -269,37 +304,24 @@ if (is_page() and !is_admin()) {
     $wep_display_name = get_option('wepdb_wep_display_name_'.$i);
 	$wep_validated = get_option('wepdb_wep_validated_'.$i);
 	if ($wep_validated == 'true'){
-     $newtext='<a class="wep_email" href="JavaScript:emo(\''.$wep_emo.'\')" title="'.$wep_display_name.'">'.$wep_display_name.'</a>';
+	 //of form mailto:	
+     $newswaptext='JavaScript:emo(\''.$wep_emo.'\')';
+	 $newtext = str_replace('mailto:'.$wep_email,$newswaptext,$newtext);
+	 //of form mailto:[email] - just in case added this way
+     $newswaptext='JavaScript:emo(\''.$wep_emo.'\')';
+	 $newtext = str_replace('mailto:['.$wep_email.']',$newswaptext,$newtext);	 
      //of form [email]
-	 $newcontent = str_replace('['.$wep_email.']',$newtext,$newcontent); //email in brackets[]
-	}
-   }
-  }
- }
-return  $newcontent;
-}
-
-function webemailprotector_text_replace($widgettext) {
- $newwidgettext=$widgettext;
- if ( get_option('wepdb_nuemails') == true){
-  $wep_nuemails = get_option('wepdb_nuemails');
-  for ($i = 1;$i <= $wep_nuemails; $i++) {
-    $wep_email = get_option('wepdb_wep_email_'.$i);
-    $wep_emo = get_option('wepdb_wep_emo_'.$i);
-    $wep_display_name = get_option('wepdb_wep_display_name_'.$i);
-	$wep_validated = get_option('wepdb_wep_validated_'.$i);
-	if ($wep_validated == 'true'){
-     $newtext='<a class="wep_email" href="JavaScript:emo(\''.$wep_emo.'\')" title="'.$wep_display_name.'">'.$wep_display_name.'</a>';
-     //of form [email]
-	 $newwidgettext = str_replace('['.$wep_email.']',$newtext,$newwidgettext); //email in brackets[]
+	 $newswaptext='<a class="wep_email" href="JavaScript:emo(\''.$wep_emo.'\')" title="'.$wep_display_name.'">'.$wep_display_name.'</a>';
+	 $newtext = str_replace('['.$wep_email.']',$newswaptext,$newtext);
 	}
   }
  }
- return $newwidgettext;
+ return $newtext;
 }
-//do it in the pages
-add_filter('the_content','webemailprotector_filter',100);
+// it in the pages
+add_filter('the_content', 'webemailprotector_text_replace',100);
 //do it in any widget text
-add_filter('widget_text', 'webemailprotector_text_replace');
-
+add_filter('widget_text', 'webemailprotector_text_replace',100);
+//do it in the menus
+add_filter( 'wp_nav_menu', 'webemailprotector_text_replace',100);
 ?>

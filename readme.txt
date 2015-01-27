@@ -1,10 +1,10 @@
 === WebEmailProtector === 
 Contributors: dsrodzin
 Donate link: http://www.webemailprotector.com/register_wp.html
-Tags: secure email address, mail, email, EMail, e-mail, E-mail, email hider, address, emo, obfuscate, obfuscation, protect, protection, harvesting, harvester, spam, protection, anti-spam, antispam, block, crawler, encode, encoder, encoding, encrypt, encryption,  encrypter, robots, spam, spambot, spider, virus, anti virus, anti-virus, identity theft , id theft , contact , contakt , conact , mailto , links , email link , email click , email address , mailto: , contact form , captcha , kontact , kontakt , kontaki , kontackty 
+Tags: shortcode, widget, secure email address, mail, email, EMail, e-mail, E-mail, email hider, address, emo, obfuscate, obfuscation, protect, protection, harvesting, harvester, spam, protection, anti-spam, antispam, block, crawler, encode, encoder, encoding, encrypt, encryption,  encrypter, robots, spam, spambot, spider, virus, anti virus, anti-virus, identity theft , id theft , contact , contakt , conact , mailto , links , email link , email click , email address , mailto: , contact form , captcha , kontact , kontakt , kontaki , kontackty 
 Requires at least: 3.0.1
 Tested up to: 4.1
-Stable tag: 1.1.6
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,6 +13,8 @@ Secure your website email addresses from being scraped and harvested with the st
 == Description ==
 
 Welcome to the WebEmailProtector plugin for WordPress. This is the latest version, tested upto WordPress version 4.1. With 100% satisfaction amongst its users so far we hope you like it too - but please review and leave your comments!
+
+Upgraded to work with the WP TwentyFifteen Theme's SocialIcons menu and the like.
 
 Using WebEmailProtector you can secure the email addresses used on your website pages and hide them from being scraped and harvested. We are confident in saying that this is the strongest email obfuscator available, 
 and therefore the best because it is much more than just a JavaScript based encoder. So stop spammers, virus attacks and ID theft perpetrators at source and keep your address private. Simple to use and fully supported.
@@ -44,7 +46,7 @@ mail , obfuscate , obfuscation , protect , protection , plugin , robots , securi
  
 = What does it do? =
 
-The EMO API detects who and what is trying to access the email link on your site, and then uses various mechanisms to determine if 
+WebEmailProtector detects who and what is trying to access the email link on your site, and then uses various mechanisms to determine if 
 this request is being made by a bona-fide user. Once a user tries to access your email, your web site automatically contacts 
 our server on which a heuristic validation process is run. We then only return your secured email address if certain criteria are met 
 and others not broken. It all happens in the blink of an eye and does not noticeably slow down the email experience. And just in case you 
@@ -76,18 +78,18 @@ WebEmailProtector settings menu of WordPress.
 
 == Frequently Asked Questions ==
 
-= What is the EMO service? =
+= What is it? =
 Email address harvesters operate by using software "scrapers" or "click through" staff to steal email addresses directly from web-site pages.
-Using our EMO (email obfuscator) service prevents this as your email addresses no longer need to be listed directly on your web-site. Instead 
+Using our service prevents this as your email addresses no longer need to be listed directly on your web-site. Instead 
 they are hidden behind a security firewall on our server. We then only release the address after 
 we are sure it is not being accessed improperly. Because of this it becomes invisible to harvesters and machines and yet is completely 
 visible to bona fide users.  
 
-= How does an EMO protected email address appear? =
-The EMO protected email address appears on a site like this: " &#60;a href='JavaScript:emo(<yourAPIkey>);' &#62;Any Text &#60;/a &#62;"
+= How does a WebEmailProtector secured email address appear? =
+The secured email address appears on a site like this: " &#60;a href='JavaScript:emo(<yourkey>);' &#62;Any Text &#60;/a &#62;"
 (you can change what it says and how it looks)
 whereas a non protected email address usually appears like this:" &#60;a href='mailto:nobody@webemailprotector.com' &#62;nobody@webemailprotector.com &#60;/a &#62;". 
-Both operate when you "click", but only the EMO one is safe.
+Both operate when you "click", but only the former is safe.
 
 = Why is it better than a Contact Form? =
 Contact Forms are effective in dealing with both human and machine based harvesting, unless you ever want to use email auto responders of course 
@@ -108,17 +110,9 @@ They are more or less complex but involve a Java/JavaScript sequence munger or c
 understands them so can any harvesting software. 
 So it's actually quite simple for encoded email addresses to be interpreted and harvested using standard software libraries.
 
-= Where do you place the EMO API code? =
-Using the plugin a few lines of code are placed in the <head> section of your HTML file.
-To use replace any  &#60;a &#62; anchor link email references in the HTML file with the EMO API code.
-Again, we send you the code and instructions after sign-up. But it's as simple as that to get protected.
-
-= Do you have to be a web expert to install the EMO API code? =
-No, it's designed to be easy to install, and we send you full instructions and offer full support incase of any difficulties.
-
 = How is the email protected? =
 We provide protection as the email address is never listed or disclosed on your website. Instead the email address is held in a secure
-place on our server and only loaded up when we verify the request is genuine. 
+place on our server and only loaded up when we verify the request is genuine through a heuristic validation process. 
 
 = What do you get for the FREE trial? =
 You get the full service free for 2 months, with exactly the same protection as offered with a paid up subscription. 
@@ -185,8 +179,14 @@ your email address or the mailto: reference. It should no longer be there. And f
 
 = 1.1.6 =
 * 6th Jan 2015
-* Upgraded to 1.4
+* Upgraded to be compatible with WPv4.1
 * Added email response confirmation of version activation & verification
+
+= 1.2.0 =
+* 17th Jan 2015
+* Upgraded to work with WP theme TwentyFifteen and the like that do not pass shortcodes from Social Menu
+* Corrected various text and added updated logo on Settings Menu
+
 
 == Upgrade Notice ==
 
