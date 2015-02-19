@@ -51,7 +51,7 @@ function webemailprotector_emo_new() {
 		 var displaytxt = row.insertCell(3);
 		 displaytxt.innerHTML = "<input type=\"text\" id=\"wep_displaytxt_"+response.id+"\" value=\"your display text "+response.id+"\" onkeyup=\"webemailprotector_displayname_change('"+response.id+"',this.value)\">";
 		 var validatekey = row.insertCell(4);
-		 validatekey.innerHTML = "<input id=\"wep_validate_"+response.id+"\" type=\"button\" class=\"button add another\" value=\"validate\" onclick=\"webemailprotector_validate('"+response.id+"')\">";
+		 validatekey.innerHTML = "<input id=\"wep_validate_"+response.id+"\" type=\"button\" class=\"button add another\" value=\"validate\" onclick=\"webemailprotector_validate('"+response.id+"','"+response.current_user_email+"')\">";
 		 var deletekey = row.insertCell(5);
 		 deletekey.innerHTML="<input id=\"wep_delete_"+response.id+"\" type=\"button\" class=\"button add another\" value=\"delete\" onclick=\"webemailprotector_emo_delete('"+response.id+"')\">";
 		 textfieldID='wep_emailtxt_'+response.id;

@@ -4,7 +4,7 @@ Donate link: http://www.webemailprotector.com/register_wp.html
 Tags: shortcode, widget, secure email address, mail, email, EMail, e-mail, E-mail, email hider, address, emo, obfuscate, obfuscation, protect, protection, harvesting, harvester, spam, protection, anti-spam, antispam, block, crawler, encode, encoder, encoding, encrypt, encryption,  encrypter, robots, spam, spambot, spider, virus, anti virus, anti-virus, identity theft , id theft , contact , contakt , conact , mailto , links , email link , email click , email address , mailto: , contact form , captcha , kontact , kontakt , kontaki , kontackty 
 Requires at least: 3.0.1
 Tested up to: 4.1
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,7 @@ Secure your website email addresses from being scraped and harvested with the st
 
 Welcome to the WebEmailProtector plugin for WordPress. This is the latest version, tested upto WordPress version 4.1. With 100% satisfaction amongst its users so far we hope you like it too - but please review and leave your comments!
 
-Upgraded to work with the WP TwentyFifteen Theme's SocialIcons menu and the like.
+Upgraded from 1.2.0 to work with the WP TwentyFifteen Theme's SocialIcons menu and the like.
 
 Using WebEmailProtector you can secure the email addresses used on your website pages and hide them from being scraped and harvested. We are confident in saying that this is the strongest email obfuscator available, 
 and therefore the best because it is much more than just a JavaScript based encoder. So stop spammers, virus attacks and ID theft perpetrators at source and keep your address private. Simple to use and fully supported.
@@ -73,8 +73,8 @@ WebEmailProtector settings menu of WordPress.
 6. Follow the instructions on the settings page to enter the "secured email addresses" and "display text"
 7. Register each email address at <http://www.webemailprotector.com/register_wp.html>
 8. Validate each email addresses on the settings menu
-9. Place the validated addresses in square brackets anywhere on your site e.g. [youremail@yourdomain.com]
-
+9. To use the protected email address(es) anywhere on your site either write them on a page using square brackets e.g. [youremail@yourdomain.com] 
+or within link WordPress Link elements e.g. mailto:youremail@yourdomains.com
 
 == Frequently Asked Questions ==
 
@@ -187,6 +187,10 @@ your email address or the mailto: reference. It should no longer be there. And f
 * Upgraded to work with WP theme TwentyFifteen and the like that do not pass shortcodes from Social Menu
 * Corrected various text and added updated logo on Settings Menu
 
+= 1.2.1 =
+* 19th Feb 2015
+* Changed install use text to add link replacement instructions
+* Removed validation bug when adding new email
 
 == Upgrade Notice ==
 
