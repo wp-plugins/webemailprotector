@@ -74,7 +74,7 @@ WebEmailProtector settings menu of WordPress.
 7. Register each email address at <http://www.webemailprotector.com/register_wp.html>
 8. Validate each email addresses on the settings menu
 9. To use the protected email address(es) anywhere on your site either write them on a page using square brackets e.g. [youremail@yourdomain.com] 
-or within link WordPress Link elements e.g. mailto:youremail@yourdomains.com
+or within WordPress Link elements e.g. mailto:youremail@yourdomains.com
 
 == Frequently Asked Questions ==
 
