@@ -1,10 +1,10 @@
-=== WebEmailProtector === 
+=== WebEmailProtector | email address spam protection === 
 Contributors: dsrodzin
 Donate link: http://www.webemailprotector.com/register_wp.html
-Tags: shortcode, widget, secure email address, mail, email, EMail, e-mail, E-mail, email hider, address, emo, obfuscate, obfuscation, protect, protection, harvesting, harvester, spam, protection, anti-spam, antispam, block, crawler, encode, encoder, encoding, encrypt, encryption,  encrypter, robots, spam, spambot, spider, virus, anti virus, anti-virus, identity theft , id theft , contact , contakt , conact , mailto , links , email link , email click , email address , mailto: , contact form , captcha , kontact , kontakt , kontaki , kontackty 
+Tags: shortcode, widget, mail, email, e-mail, e-mail, hider, address, addresses, emo, obfuscate, obfuscation, obfuscator, protect, protection, protector, harvest, harvesting, harvester, anti, spam, protect, protector, protection, secure, security, anti-spam, antispam, block, crawler, encode, encoder, encoding, encrypt, encryption, encrypter, robot, robots, spam, spambot, spider, trawler, virus, anti virus, anti-virus, identity theft , id theft , contact , contakt , conact , mailto , link, links , click , mailto: , contact form , captcha , capcha, kontact , kontakt , kontaki , kontackty 
 Requires at least: 3.0.1
-Tested up to: 4.1
-Stable tag: 1.2.1
+Tested up to: 4.1.1
+Stable tag: 1.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,7 @@ Secure your website email addresses from being scraped and harvested with the st
 
 Welcome to the WebEmailProtector plugin for WordPress. This is the latest version, tested upto WordPress version 4.1. With 100% satisfaction amongst its users so far we hope you like it too - but please review and leave your comments!
 
-Upgraded from 1.2.0 to work with the WP TwentyFifteen Theme's SocialIcons menu and the like.
+Upgraded from 1.2.0 to work with the latest themes including WP TwentyFifteen & the Social Icons menu and the like.
 
 Using WebEmailProtector you can secure the email addresses used on your website pages and hide them from being scraped and harvested. We are confident in saying that this is the strongest email obfuscator available, 
 and therefore the best because it is much more than just a JavaScript based encoder. So stop spammers, virus attacks and ID theft perpetrators at source and keep your address private. Simple to use and fully supported.
@@ -31,18 +31,12 @@ exactly like a regular email link. Any visitor can simply click on your email to
 our service there is a difference: since your address is no longer contained in the link itself, it is safe from being harvested and misused. 
 In-fact we believe that it is so secure that you can do away with cumbersome Contact Forms and Captchas completely.
 
-= Relevant Keywords = 
-
-Keywords: email, email address , anti-spam , antispam , anti virus , anti-virus , anti virus , best , block , captcha , contact , contakt , conact , 
-conntact , contact form , crawler , eemail , email , EMail , emal , enail , e-mail , E-mail , email hider , emo , encode , encoder , 
-encoding , encrypt , encryption ,  encrypter , harvesting , harvester , hide , identity theft , id theft , kontact , kontakt , kontaki , kontackty , links , mailto , mailto: , 
-mail , obfuscate , obfuscation , protect , protection , plugin , robots , security , secure , spam , spambot , spider , wordpress
-
 = Pricing =
-* This plugin is used to administrate the WebEmailProtector service on your WordPress pages for your convenience and is FREE.
-* The WebEmailProtector service itself is offered FREE for a limited period of 2 months - no payment details taken.
-* At the end of the FREE trial period it remains FREE for non commercial site, but commercial sites require a small annual subscription.
-* Visit <http://www.webemailprotector.com/subscribe.html> for more details.
+* This FREE plugin is provided to administrate the WebEmailProtector service on your WordPress pages for your convenience.
+* Access to the associated WebEmailProtector service itself is offered FREE for a trial period of 2 months, and no payment details are required.
+* At the end of the trial the service remains FREE for non-commercial sites (schools, charities, religious institutions, personal blogs etc).
+* For commercial sites we ask for a modest annual subscription at the end of the trial.
+* Visit <http://www.webemailprotector.com/subscribe.html> for more details regarding definitions and subscription pricing options.
  
 = What does it do? =
 
@@ -191,6 +185,11 @@ your email address or the mailto: reference. It should no longer be there. And f
 * 19th Feb 2015
 * Changed install use text to add link replacement instructions
 * Removed validation bug when adding new email
+
+= 1.3.0 =
+* 17th March 2015
+* Added new title for plugin to improve searchability
+* Slightly reworded pricing to make clearer
 
 == Upgrade Notice ==
 
