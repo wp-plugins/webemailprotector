@@ -1,7 +1,7 @@
 === WebEmailProtector | email address spam protection === 
 Contributors: dsrodzin
 Donate link: http://www.webemailprotector.com/register_wp.html
-Tags: shortcode, widget, mail, email, e-mail, e-mail, hider, address, addresses, emo, obfuscate, obfuscation, obfuscator, protect, protection, protector, harvest, harvesting, harvester, anti, spam, protect, protector, protection, secure, security, anti-spam, antispam, block, crawler, encode, encoder, encoding, encrypt, encryption, encrypter, robot, robots, spam, spambot, spider, trawler, virus, anti virus, anti-virus, identity theft , id theft , contact , contakt , conact , mailto , link, links , click , mailto: , contact form , captcha , capcha, kontact , kontakt , kontaki , kontackty 
+Tags: shortcode, widget, mail, email, e-mail, e-mail, hider, address, addresses, emo, malware, obfuscate, obfuscation, obfuscator, phishing, fishing, phising, pishing, private, privacy, protect, protection, protector, harvest, harvesting, harvester, anti, spam, protect, protector, protection, secure, security, anti-spam, antispam, block, crawler, encode, encoder, encoding, encrypt, encryption, encrypter, robot, robots, spam, spambot, spider, trawler, virus, anti virus, anti-virus, identity theft , id theft , contact , contakt , conact , mailto , link, links , click , mailto: , contact form , captcha , capcha, kontact , kontakt , kontaki , kontackty 
 Requires at least: 3.0.1
 Tested up to: 4.1.1
 Stable tag: 1.3.0
