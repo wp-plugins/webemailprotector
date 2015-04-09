@@ -49,10 +49,12 @@ function webemailprotector_emo_new() {
 		 var closebrackettxt = row.insertCell(2);
 		 closebrackettxt.outerHTML = "<td style=\"font-size:30px;padding-bottom:10px;\">]</td>";
 		 var displaytxt = row.insertCell(3);
-		 displaytxt.innerHTML = "<input type=\"text\" id=\"wep_displaytxt_"+response.id+"\" value=\"your display text "+response.id+"\" onkeyup=\"webemailprotector_displayname_change('"+response.id+"',this.value)\">";
-		 var validatekey = row.insertCell(4);
+		 displaytxt.innerHTML = "<input type=\"text\" id=\"wep_displaytxt_"+response.id+"\" value=\"your web text "+response.id+"\" onkeyup=\"webemailprotector_displayname_change('"+response.id+"',this.value)\">";
+		 var registerkey = row.insertCell(4);
+		 registerkey.innerHTML = "<input id=\"wep_regiser_"+response.id+"\" type=\"button\" class=\"button add another\" value=\"register\" onclick=\"window.open('http://www.webemailprotector.com/cgi-bin/reg.py?cms=wp&email="+response.email+"')\" >";
+		 var validatekey = row.insertCell(5);
 		 validatekey.innerHTML = "<input id=\"wep_validate_"+response.id+"\" type=\"button\" class=\"button add another\" value=\"validate\" onclick=\"webemailprotector_validate('"+response.id+"','"+response.current_user_email+"')\">";
-		 var deletekey = row.insertCell(5);
+		 var deletekey = row.insertCell(6);
 		 deletekey.innerHTML="<input id=\"wep_delete_"+response.id+"\" type=\"button\" class=\"button add another\" value=\"delete\" onclick=\"webemailprotector_emo_delete('"+response.id+"')\">";
 		 textfieldID='wep_emailtxt_'+response.id;
          document.getElementById(textfieldID).style.color="red";		 
@@ -163,4 +165,22 @@ function webemailprotector_emo_act($current_user_email) {
     data: {'current_user_email':$current_user_email},
     dataType: "jsonp", 
     cache: false });
+}
+
+//the new one v1.3.1
+function webemailprotector_register($emo_nu,$current_user_email) {
+ email='undefined';
+ //first get the email address from db associated with emo_nu as may have been updated since last php load
+ jQuery.ajax({
+     type:"GET",
+	 data: {action:'wep_email_get',emo_nu:$emo_nu,security:MyAjax.security},
+	 url: "admin-ajax.php",
+	 //then if successful interrogate the server
+     success: function (response) {
+         email=response;
+		 //alert(email);
+         //jsonp as cross domain
+         window.open("http://www.webemailprotector.com/register.py?email=',email,'&cms=wp")
+     }    
+     });	 
 }

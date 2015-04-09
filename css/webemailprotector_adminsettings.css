@@ -20,21 +20,25 @@
 
 .webemailprotector_admin_wrap input[type="button"]:hover , .webemailprotector_admin_wrap table input[type="button"]:hover {background: #1E8CC4;}
 */
-.webemailprotector_admin_wrap table {background:silver;border:3px solid blue; border-radius:15px;margin-top:30px;margin-left:50px;padding:20px;}
+.webemailprotector_admin_wrap table.wep_main {background:silver;border:3px solid blue; border-radius:15px;margin-top:10px;margin-left:50px;padding:20px;}
 
-.webemailprotector_admin_wrap tr {}
+.webemailprotector_admin_wrap table.wep_main tr {}
 
-.webemailprotector_admin_wrap th {font-size:14px;}
+.webemailprotector_admin_wrap table.wep_main th {font-size:14px;}
 
-.webemailprotector_admin_wrap td {}
+.webemailprotector_admin_wrap table.wep_main td {}
 
-.webemailprotector_admin_wrap table p {}
+.webemailprotector_admin_wrap table.wep_main p {}
 
-.webemailprotector_admin_wrap table input[type="text"] {text-align:center;padding:5px;margin:0;width:300px;border:1px solid black;border-radius:5px;}
+.webemailprotector_admin_wrap table.wep_main input[type="text"] {text-align:center;padding:5px;margin:0;width:300px;border:1px solid black;border-radius:5px;}
 
-.webemailprotector_admin_wrap table input[type="text"]:focus {color:red;}
+.webemailprotector_admin_wrap table.wep_main input[type="text"]:focus {color:red;}
 
-.webemailprotector_admin_wrap table input[type="button"] {}
+.webemailprotector_admin_wrap table.wep_main input[type="button"] {}
+
+.webemailprotector_admin_wrap table.wep_main input[type="button"]:hover {background-color:lightgreen;}
+
+.webemailprotector_admin_wrap table.wep_top td {width:300px;vertical-align:top;}
 
 .webemailprotector_admin_wrap #wep_spinner {position:fixed;text-align:centre;width:200px;top:30%;left:40%;margin-left:auto;margin-right:auto;display:none;padding:45px;z-index:1001;background:white;border-radius:15px;border:3px solid blue;}
 

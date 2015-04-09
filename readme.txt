@@ -4,37 +4,35 @@ Donate link: http://www.webemailprotector.com/register_wp.html
 Tags: shortcode, widget, mail, email, e-mail, e-mail, hider, address, addresses, emo, malware, obfuscate, obfuscation, obfuscator, phishing, fishing, phising, pishing, private, privacy, protect, protection, protector, harvest, harvesting, harvester, anti, spam, protect, protector, protection, secure, security, anti-spam, antispam, block, crawler, encode, encoder, encoding, encrypt, encryption, encrypter, robot, robots, spam, spambot, spider, trawler, virus, anti virus, anti-virus, identity theft , id theft , contact , contakt , conact , mailto , link, links , click , mailto: , contact form , captcha , capcha, kontact , kontakt , kontaki , kontackty 
 Requires at least: 3.0.1
 Tested up to: 4.1.1
-Stable tag: 1.3.0
+Stable tag: 1.4.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Secure your website email addresses from being scraped and harvested with the strongest email obfuscator available.
+Stop your website email addresses from being scraped and harvested by spammers with the best email obfuscator protection available.
 
 == Description ==
 
-Welcome to the WebEmailProtector plugin for WordPress. This is the latest version, tested upto WordPress version 4.1. With 100% satisfaction amongst its users so far we hope you like it too - but please review and leave your comments!
+Welcome to the WebEmailProtector plugin for WordPress. This is the latest version, tested with WordPress version 4.1.1, WP's TwentyFifteen Theme and SocialIcons menus. With 100% satisfaction amongst its users so far we hope you like it too - but please review and leave your comments!
 
-Upgraded from 1.2.0 to work with the latest themes including WP TwentyFifteen & the Social Icons menu and the like.
-
-Using WebEmailProtector you can secure the email addresses used on your website pages and hide them from being scraped and harvested. We are confident in saying that this is the strongest email obfuscator available, 
-and therefore the best because it is much more than just a JavaScript based encoder. So stop spammers, virus attacks and ID theft perpetrators at source and keep your address private. Simple to use and fully supported.
+Using WebEmailProtector you can list your email addresses on your website and hide them from being scraped and harvested with confidence. This is the strongest email obfuscator available, plugin or otherwise, 
+and likely the only one that actually works. All others use Javascript "encoders" to try to hide your email. But both emails and encoder methods are given away by the web page. Ours works a different way. So stop spammers, virus attacks and ID theft perpetrators at source and keep your address private. Simple to use and fully supported.
 
 As a start why not check how secure your existing pages are using our email finder tool at <http://www.webemailprotector.com/website-email-security-check.html>?
 
 So why do we believe that WebEmailProtector is the best? Simple: we use secure server-side authentication with heuristics. 
-In laymans's terms this means that your email address is stored on our server not on your website. Because of this we can protect its release by looking at who and what is requesting it, but it does mean that you must register your address with us to use. 
-Bona-fide visitors are still able to easily contact you via your existing email, seamlessly, but harvesters are stopped in their tracks. 
+In layman's terms this means that both your email address and the decoder is stored on our server not on your website. Because of this we can protect its release by looking at who and what is requesting it, but it does mean that you must register your address with us to use it. 
+Genuine users are still able to easily contact you via your existing email, seamlessly, but harvesters are stopped in their tracks. 
 
-Once the plugin is installed, your existing emails registered with WebEmailProtector.com and you complete the simple set-up procedure through the 
-settings menu, you can place your email address(es) anywhere on your WordPress site and the rest is taken care of. Each link will then appear to work 
+So once the plugin is installed, you've register your existing emails at WebEmailProtector.com and you complete the simple set-up procedure through the 
+settings menu of the plugin, you can place your email address(es) anywhere on your WordPress site and the rest is taken care of. Each link will then appear to work 
 exactly like a regular email link. Any visitor can simply click on your email to send you a message using their favourite email tool. However with 
 our service there is a difference: since your address is no longer contained in the link itself, it is safe from being harvested and misused. 
 In-fact we believe that it is so secure that you can do away with cumbersome Contact Forms and Captchas completely.
 
 = Pricing =
-* This FREE plugin is provided to administrate the WebEmailProtector service on your WordPress pages for your convenience.
+* This plugin is provided FREE to administrate the WebEmailProtector service on your WordPress pages for your convenience.
 * Access to the associated WebEmailProtector service itself is offered FREE for a trial period of 2 months, and no payment details are required.
-* At the end of the trial the service remains FREE for non-commercial sites (schools, charities, religious institutions, personal blogs etc).
+* At the end of the trial, the service remains FREE for non-commercial sites (schools, charities, religious institutions, personal blogs etc).
 * For commercial sites we ask for a modest annual subscription at the end of the trial.
 * Visit <http://www.webemailprotector.com/subscribe.html> for more details regarding definitions and subscription pricing options.
  
@@ -190,6 +188,12 @@ your email address or the mailto: reference. It should no longer be there. And f
 * 17th March 2015
 * Added new title for plugin to improve searchability
 * Slightly reworded pricing to make clearer
+
+= 1.3.0 =
+* 9h April 2015
+* Added register button to admin table to directly access addresses
+* Improved top section layout
+* Made on hover class for buttons
 
 == Upgrade Notice ==
 

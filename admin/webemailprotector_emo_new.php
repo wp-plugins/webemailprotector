@@ -19,10 +19,12 @@ function webemailprotector_emo_new(){
  update_option('wepdb_nuemails',$wep_nuemails);
  $wep_current_user = wp_get_current_user(); //new in 1.2.1
  $wep_current_user_email = $wep_current_user->user_email; //new in 1.2.1
+ $wep_email = 'your email address '.$i;
  $arr = array(
   'row'=>$wep_nuemails,
   'id'=>$i,
-  'current_user_email'=>$wep_current_user_email
+  'current_user_email'=>$wep_current_user_email,
+  'email'=>$wep_email
  );
  echo json_encode($arr);
  die();// you need this

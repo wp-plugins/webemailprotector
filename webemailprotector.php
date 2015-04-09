@@ -2,8 +2,8 @@
 /*
  * Plugin Name: WebEmailProtector
  * Plugin URI: http://www.webemailprotector.com
- * Description: Securely list your contact email addresses on your WordPress website with the strongest protection against harvesters and scrapers. Go to the WebEmailProtector <a href="options-general.php?page=webemailprotector_plugin_options.php">Settings</a> menu to configure.
- * Version: 1.3.0
+ * Description: Safely add your contact email addresses on your WordPress website with the best protection against spammers. Go to the WebEmailProtector <a href="options-general.php?page=webemailprotector_plugin_options.php">Settings</a> menu to configure.
+ * Version: 1.4.0
  * Author: David Srodzinski
  * Author URI: http://www.webemailprotector.com/about.html
  * License: GPL2
@@ -83,8 +83,6 @@ file_put_contents(plugin_dir_path(__FILE__).'css/webemailprotector_youremailstyl
 
 add_action('wp_enqueue_scripts', 'webemailprotector_youremailstyle');
 
-
-
 // function to add settings link on plugin page
 add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'webemailprotector_settings_link');
 function webemailprotector_settings_link($links) {
@@ -126,7 +124,7 @@ function webemailprotector_plugin_options() {
   $wep_current_user = wp_get_current_user();
   $wep_current_user_email = $wep_current_user->user_email;
   //set up version ver
-  $wep_ver='v1.3.0';
+  $wep_ver='v1.4.0';
   $wep_init = false;
   if ( get_option('wepdb_wep_ver') == true ) {
    if (get_option('wepdb_wep_ver') != $wep_ver){
@@ -210,17 +208,22 @@ function webemailprotector_plugin_options() {
   echo '<br />';
   echo '<img style="display:inline;margin:0px 0px 0px 60px;vertical-align:middle" src="'.plugin_dir_url(__FILE__).'images/webemailprotector_logo.png" width="398px" height="102px"/>';
   echo '<h1 style="display:inline;margin:0px 0px 0px 0px;">&nbsp;&nbsp;'.$wep_ver.'&nbsp;&nbsp;&nbsp;WordPress Plugin Settings Menu</h1>';
-  echo '<p>Enter the email addresses that you wish to secure into the <b>secured email address</b> column of the table below ';
-  echo '(<i> these must be <br />existing email addresses that you will need to registered with us</i> ).</p>';
-  echo '<p>Next enter the associated display text into the <b>displayed text</b> column (<i> this is the link text that will appear in place of the ';
-  echo 'email <br>address when your WordPress pages are published</i> ).</p>';
-  echo '<p>Then follow the further instructions below to register, validate and use each email.</p>';
+  echo '<table class="wep_top"><tbody><tr>';
+  echo '<td style="width:80px;"></td>';
+  echo '<td>Enter the email addresses that you wish to secure into the <b>secured email address</b> column of the table below :';
+  echo '<br /><br />(<i> these must be existing email addresses that you will need to register with us as described under the table</i> ).</td>';
+  echo '<td style="width:10px;"></td>';
+  echo '<td>Next enter the associated display text into the <b>displayed text</b> column : <br /><br /><br />(<i> this is the link text that will appear in place of the ';
+  echo 'email address when your WordPress pages are published</i> ).</td>';
+  echo '<td style="width:10px;"></td>';
+  echo '<td style="width:200px;">Then follow the further instructions below the table to register, validate and use each email entity.</td>';
+  echo '</tr></tbody></table>';
   echo '<form action="" name="wep_settings" method="POST">';
-  echo '<table id="wep_table"><tbody>';
+  echo '<table id="wep_table" class="wep_main"><tbody>';
   echo '<tr>';
   echo '<th colspan="3">secured email address </th>';
   echo '<th>displayed text</th>';
-  echo '<th colspan="2">actions</th>';
+  echo '<th colspan="3">actions</th>';
   echo '</tr>';
   $php_pathname='\''.plugin_dir_url(__FILE__).'admin'.'\'';
   for ($i = 1;$i <=$wep_nuemails; $i++) {
@@ -234,6 +237,7 @@ function webemailprotector_plugin_options() {
    echo '<td><input type="text" id="wep_emailtxt_'.$i.'" style="'.$color.';" onkeyup="webemailprotector_email_change(\''.$i.'\',this.value)" name="wep_email_'.$i.'" value="'.$emo_email.'"></td>';
    echo '<td style="font-size:30px;padding-bottom:10px;">]</td>';
    echo '<td><input type="text" id="wep_displaytxt_'.$i.'" onkeyup="webemailprotector_displayname_change(\''.$i.'\',this.value)" name="wep_name_'.$i.'" value="'.$display_name.'"></td>';
+   echo '<td><input id="wep_register_'.$i.'" type="button" class="button add another" value="register" onclick="window.open(\'http://www.webemailprotector.com/cgi-bin/reg.py?cms=wp&email='.$emo_email.'\')"></td>';
    echo '<td><input id="wep_validate_'.$i.'" type="button" class="button add another" value="validate" onclick="webemailprotector_validate(\''.$i.'\',\''.$wep_current_user_email.'\')"></td>';
    echo '<td><input id="wep_delete_'.$i.'" type="button" class="button add another" value="delete" onclick="webemailprotector_emo_delete(\''.$i.'\')"></td>';
    echo '</tr>';
@@ -260,9 +264,9 @@ function webemailprotector_plugin_options() {
   echo '<p><u>Registration and Validation Instructions:</u></p>';
   echo '<p>1. Each email address needs to be both registered and then validated with us in order to use.&nbsp;';
   echo '(<i> If you don\'t follow these 2 steps it will <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;not work! But luckily you should only ever have to do this once per email - even if we update the plugin</i> ).</p>';
-  echo '<p>2. Firstly, to register each email address please follow the instructions at our website here: <a target="_blank" href="http://www.webemailprotector.com/register_wp.html">register</a>.';
-  echo '&nbsp(<i> The email address must already';
-  echo '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exist and the addressee will need to be able to receive to this email address in order to confirm their identity</i> ).</p>';
+  echo '<p>2. Firstly, to register each email address with us click on the <input id="submit" type="button" class="button add another" value="register"> button beside the email address.';
+  echo '&nbsp(<i> This places a copy of your address';
+  echo '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;on our server. The address must exist as the addressee will need to be able to receive messages to this email in order to confirm their identity</i> ).</p>';
   echo '<p>3. Next, to validate that each registration succeeded and that it is ready to use click on the <input id="submit" type="button" class="button add another" value="validate"> button beside the email address.';
   echo '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(<i> You will be able to tell that the email address registration was successful ';
   echo 'because you get a pop-up confirmation message to say so and the<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email text color will turn from red to green</i> ).</p>';
@@ -278,8 +282,8 @@ function webemailprotector_plugin_options() {
   echo '<p>You can add delete any email addresses using the <input id="delete" class="button add another" type="button" value="delete"> button.</p>';
   echo '<p>As an option you can change the style of the email address appearance using CSS. For those familiar with CSS use the class "wep_email" of<br>';
   echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the &#60;a&#62; element using the selector a.wep_email {}.';
-  echo '&nbsp;A template css file that is included on page viewing is provided for you to edit the style.';
-  echo '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It can be located within the plugin directory webemailprotector/css/webemailprotector_youremailstyle.css.';
+  echo '&nbsp;A template css file is provided for you to edit the style as you wish.';
+  echo '<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;It can be located within the plugin directory at : webemailprotector/css/webemailprotector_youremailstyle.css.';
   echo '<p><br></p>';
 
   //set up the spinner
