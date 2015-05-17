@@ -39,6 +39,8 @@ function webemailprotector_emo_new() {
 	 url: "admin-ajax.php",
      success: function (response) {
          //alert ("New email no."+response+" added");
+		 if (typeof location.origin === 'undefined')
+         location.origin = location.protocol + '//' + location.host;
 		 tableID='wep_table';
          var row = document.getElementById(tableID).insertRow(response.row);
 		 row.id='wep_tablerow_'+response.id;
@@ -51,11 +53,12 @@ function webemailprotector_emo_new() {
 		 var displaytxt = row.insertCell(3);
 		 displaytxt.innerHTML = "<input type=\"text\" id=\"wep_displaytxt_"+response.id+"\" value=\"your web text "+response.id+"\" onkeyup=\"webemailprotector_displayname_change('"+response.id+"',this.value)\">";
 		 var registerkey = row.insertCell(4);
-		 registerkey.innerHTML = "<input id=\"wep_regiser_"+response.id+"\" type=\"button\" class=\"button add another\" value=\"register\" onclick=\"window.open('http://www.webemailprotector.com/cgi-bin/reg.py?cms=wp&email="+response.email+"')\" >";
+		 //registerkey.innerHTML = "<input id=\"wep_regiser_"+response.id+"\" type=\"button\" class=\"button add another\" value=\"register\" onclick=\"window.open('http://www.webemailprotector.com/cgi-bin/reg.py?cms=wp&email="+response.email+"')\" >";
+		 registerkey.innerHTML = "<a id=\"wep_regiser_"+response.id+"\" type=\"button\" class=\"button add another\" href=\"http://www.webemailprotector.com/cgi-bin/reg.py?cms=wp&email="+response.email+"&website="+location.host+"\" target=\"_blank\">REGISTER</a>";
 		 var validatekey = row.insertCell(5);
-		 validatekey.innerHTML = "<input id=\"wep_validate_"+response.id+"\" type=\"button\" class=\"button add another\" value=\"validate\" onclick=\"webemailprotector_validate('"+response.id+"','"+response.current_user_email+"')\">";
+		 validatekey.innerHTML = "<input id=\"wep_validate_"+response.id+"\" type=\"button\" class=\"button add another\" value=\"VALIDATE\" onclick=\"webemailprotector_validate('"+response.id+"','"+response.current_user_email+"')\">";
 		 var deletekey = row.insertCell(6);
-		 deletekey.innerHTML="<input id=\"wep_delete_"+response.id+"\" type=\"button\" class=\"button add another\" value=\"delete\" onclick=\"webemailprotector_emo_delete('"+response.id+"')\">";
+		 deletekey.innerHTML="<input id=\"wep_delete_"+response.id+"\" type=\"button\" class=\"button add another\" value=\"DELETE\" onclick=\"webemailprotector_emo_delete('"+response.id+"')\">";
 		 textfieldID='wep_emailtxt_'+response.id;
          document.getElementById(textfieldID).style.color="red";		 
      }    

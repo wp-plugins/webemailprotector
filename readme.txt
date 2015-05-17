@@ -3,8 +3,8 @@ Contributors: dsrodzin
 Donate link: http://www.webemailprotector.com/register_wp.html
 Tags: shortcode, widget, mail, email, e-mail, e-mail, hider, address, addresses, emo, malware, obfuscate, obfuscation, obfuscator, phishing, fishing, phising, pishing, private, privacy, protect, protection, protector, harvest, harvesting, harvester, anti, spam, protect, protector, protection, secure, security, anti-spam, antispam, block, crawler, encode, encoder, encoding, encrypt, encryption, encrypter, robot, robots, spam, spambot, spider, trawler, virus, anti virus, anti-virus, identity theft , id theft , contact , contakt , conact , mailto , link, links , click , mailto: , contact form , captcha , capcha, kontact , kontakt , kontaki , kontackty 
 Requires at least: 3.0.1
-Tested up to: 4.1.1
-Stable tag: 1.4.0
+Tested up to: 4.2.2
+Stable tag: 1.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -189,11 +189,16 @@ your email address or the mailto: reference. It should no longer be there. And f
 * Added new title for plugin to improve searchability
 * Slightly reworded pricing to make clearer
 
-= 1.3.0 =
-* 9h April 2015
+= 1.4.0 =
+* 9th April 2015
 * Added register button to admin table to directly access addresses
 * Improved top section layout
 * Made on hover class for buttons
+
+= 1.4.1 =
+* 17th May 2015 
+* Upgraded to WP v4.2.2
+* Added REGISTER as a link
 
 == Upgrade Notice ==
 
