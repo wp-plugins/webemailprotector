@@ -3,7 +3,7 @@
  * Plugin Name: WebEmailProtector
  * Plugin URI: http://www.webemailprotector.com
  * Description: Safely add your contact email addresses on your WordPress website with the best protection against spammers. Go to the WebEmailProtector <a href="options-general.php?page=webemailprotector_plugin_options.php">Settings</a> menu to configure.
- * Version: 1.4.1
+ * Version: 1.4.2
  * Author: David Srodzinski
  * Author URI: http://www.webemailprotector.com/about.html
  * License: GPL2
@@ -38,13 +38,14 @@ require_once(plugin_dir_path(__FILE__).'admin/webemailprotector_email_get.php');
 
 // function to add script code to <head>
 function webemailprotector_insertheaderscript() {
- $scripturl = plugin_dir_url(__FILE__).'scripts/webemailprotector_headerscripts.js';
  if (!is_admin()) { //any java for published
+  $scripturl = 'http://www.webemailprotector.com/cgi-bin/emo.js';
+  $randver = rand(1,100000);
   wp_enqueue_script('jquery'); //incase not already loaded
-  wp_enqueue_script('webemailprotector_headerscripts',$scripturl,array('jquery'));
+  wp_enqueue_script('webemailprotector_headerscripts',$scripturl,array('jquery'),$randver,true);
  }
- $scripturl = plugin_dir_url(__FILE__).'scripts/webemailprotector_adminscripts.js';
  if (is_admin()) { //any java for settings etc
+  $scripturl = plugin_dir_url(__FILE__).'scripts/webemailprotector_adminscripts.js';
   wp_enqueue_script('jquery'); //incase not already loaded
   wp_enqueue_script('webemailprotector_adminscripts',$scripturl);
   wp_localize_script( 'webemailprotector_adminscripts', 'MyAjax', array(
@@ -124,7 +125,7 @@ function webemailprotector_plugin_options() {
   $wep_current_user = wp_get_current_user();
   $wep_current_user_email = $wep_current_user->user_email;
   //set up version ver
-  $wep_ver='v1.4.1';
+  $wep_ver='v1.4.2';
   $wep_init = false;
   if ( get_option('wepdb_wep_ver') == true ) {
    if (get_option('wepdb_wep_ver') != $wep_ver){
